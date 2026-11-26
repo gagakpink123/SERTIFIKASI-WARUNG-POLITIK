@@ -1,0 +1,3130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ujian Sertifikasi Pengamat Politik Dadakan 2026 — Kedai Sebelah</title>
+
+  <!-- Google Fonts: Archivo (Display), Inter (Editorial Body), JetBrains Mono (Technical Labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- PDF Export Libraries: html2canvas & jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    /* ==========================================================================
+       SWISS INTERNATIONAL STYLE & NEO-BRUTALIST DESIGN TOKENS
+       Palette: Pure White (#FFFFFF), Near Black (#111111), Signal Red (#FF0000)
+       Geometry: Strict 0px corners, 1.5px precision black linework, 32px grid
+       ========================================================================== */
+    :root {
+      --bg-white: #FFFFFF;
+      --surface-card: #FFFFFF;
+      --ink-black: #111111;
+      --signal-red: #FF0000;
+      --grid-line: rgba(17, 17, 17, 0.065);
+    }
+
+    [data-theme="dark"] {
+      --bg-white: #0D0D0D;
+      --surface-card: #161616;
+      --ink-black: #F4F4F4;
+      --signal-red: #FF0000;
+      --grid-line: rgba(244, 244, 244, 0.075);
+    }
+
+    * {
+      box-sizing: border-box;
+      border-radius: 0px !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-white);
+      color: var(--ink-black);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-image:
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 32px 32px;
+      background-position: -1px -1px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-display {
+      font-family: 'Archivo', sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    .font-mono-tech {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .border-brutal {
+      border: 1.5px solid var(--ink-black);
+    }
+
+    .border-brutal-t { border-top: 1.5px solid var(--ink-black); }
+    .border-brutal-b { border-bottom: 1.5px solid var(--ink-black); }
+    .border-brutal-l { border-left: 1.5px solid var(--ink-black); }
+    .border-brutal-r { border-right: 1.5px solid var(--ink-black); }
+
+    .shadow-brutal {
+      box-shadow: 5px 5px 0px var(--ink-black);
+    }
+
+    .shadow-brutal-sm {
+      box-shadow: 3px 3px 0px var(--ink-black);
+    }
+
+    .shadow-brutal-red {
+      box-shadow: 5px 5px 0px var(--signal-red);
+    }
+
+    .btn-brutal {
+      border: 1.5px solid var(--ink-black);
+      transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.12s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.12s ease, color 0.12s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .btn-brutal:hover:not(:disabled) {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0px var(--ink-black);
+    }
+
+    .btn-brutal:active:not(:disabled) {
+      transform: translate(2px, 2px);
+      box-shadow: 0px 0px 0px var(--ink-black);
+    }
+
+    .btn-brutal:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* Continuous Marquee Ticker */
+    .marquee-wrapper {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      background-color: var(--bg-white);
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      animation: marqueeScroll 42s linear infinite;
+    }
+
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Kinetic Directional Slide Animations */
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(28px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-28px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .anim-slide-next {
+      animation: slideInRight 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .anim-slide-prev {
+      animation: slideInLeft 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .anim-slide-up {
+      animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Blinking Signal Red Indicator */
+    @keyframes pulseSignal {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+    .signal-dot {
+      animation: pulseSignal 1.4s infinite;
+    }
+
+    /* Custom Scrollbar for Question Matrix */
+    .matrix-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .matrix-scroll::-webkit-scrollbar-track {
+      background: #FFFFFF;
+      border-left: 1px solid #111111;
+    }
+    .matrix-scroll::-webkit-scrollbar-thumb {
+      background: #111111;
+    }
+
+    /* Certificate Framing */
+    .cert-paper {
+      background-color: #FFFFFF;
+      background-image:
+        linear-gradient(to right, rgba(17, 17, 17, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(17, 17, 17, 0.045) 1px, transparent 1px);
+      background-size: 32px 32px;
+      border: 3px solid #111111;
+      position: relative;
+    }
+
+    /* ========================================================================
+       DARK MODE OVERRIDES (PRESERVING SWISS NEO-BRUTALIST CONTRAST & A4 PAPER)
+       ======================================================================== */
+    [data-theme="dark"] header.bg-white,
+    [data-theme="dark"] footer.bg-white,
+    [data-theme="dark"] .marquee-wrapper {
+      background-color: #0D0D0D !important;
+    }
+
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).bg-white {
+      background-color: var(--surface-card) !important;
+    }
+
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).text-\[\#111111\] {
+      color: #F4F4F4 !important;
+    }
+
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *)[class*="text-[#111111]/"] {
+      color: rgba(244, 244, 244, 0.74) !important;
+    }
+
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).border-\[\#111111\],
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).border-brutal,
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).border-brutal-t,
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).border-brutal-b,
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).border-brutal-l,
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).border-brutal-r,
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).divide-\[\#111111\] > :not([hidden]) ~ :not([hidden]) {
+      border-color: #F4F4F4 !important;
+    }
+
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).bg-\[\#111111\] {
+      background-color: #F4F4F4 !important;
+      color: #0D0D0D !important;
+    }
+
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).bg-\[\#111111\] .text-white {
+      color: #0D0D0D !important;
+    }
+
+    [data-theme="dark"] :not(#certificate-document):not(#certificate-document *).bg-\[\#111111\] .text-white\/70 {
+      color: rgba(13, 13, 13, 0.72) !important;
+    }
+
+    [data-theme="dark"] .bg-\[\#FF0000\],
+    [data-theme="dark"] .bg-\[\#FF0000\] .text-white {
+      background-color: #FF0000 !important;
+      color: #FFFFFF !important;
+    }
+
+    [data-theme="dark"] .shadow-brutal {
+      box-shadow: 5px 5px 0px #F4F4F4 !important;
+    }
+
+    [data-theme="dark"] .shadow-brutal-sm {
+      box-shadow: 3px 3px 0px #F4F4F4 !important;
+    }
+
+    [data-theme="dark"] .btn-brutal:hover:not(:disabled) {
+      box-shadow: 4px 4px 0px #F4F4F4 !important;
+    }
+
+    [data-theme="dark"] .btn-brutal:active:not(:disabled) {
+      box-shadow: 0px 0px 0px #F4F4F4 !important;
+    }
+
+    [data-theme="dark"] .hover\:bg-\[\#111111\]:hover:not(:disabled) {
+      background-color: #F4F4F4 !important;
+      color: #0D0D0D !important;
+    }
+
+    [data-theme="dark"] .hover\:text-white:hover:not(:disabled) {
+      color: #0D0D0D !important;
+    }
+
+    [data-theme="dark"] #btn-pause:hover {
+      background-color: #FF0000 !important;
+      color: #FFFFFF !important;
+    }
+
+    [data-theme="dark"] input[type="text"] {
+      background-color: #0D0D0D !important;
+      color: #F4F4F4 !important;
+    }
+
+    [data-theme="dark"] input[type="text"]::placeholder {
+      color: rgba(244, 244, 244, 0.42);
+    }
+
+    [data-theme="dark"] .matrix-scroll::-webkit-scrollbar-track {
+      background: #161616;
+      border-left: 1px solid #F4F4F4;
+    }
+
+    [data-theme="dark"] .matrix-scroll::-webkit-scrollbar-thumb {
+      background: #F4F4F4;
+    }
+
+    /* Adapt Blueprint Schematic SVG in Dark Mode */
+    [data-theme="dark"] #view-register svg rect[fill="#FFFFFF"] {
+      fill: #161616;
+    }
+    [data-theme="dark"] #view-register svg rect[fill="#111111"] {
+      fill: #F4F4F4;
+    }
+    [data-theme="dark"] #view-register svg text[fill="#111111"] {
+      fill: #F4F4F4;
+    }
+    [data-theme="dark"] #view-register svg text[fill="#FFFFFF"] {
+      fill: #0D0D0D;
+    }
+    [data-theme="dark"] #view-register svg [stroke="#111111"] {
+      stroke: #F4F4F4;
+    }
+    [data-theme="dark"] #view-register svg polygon[fill="#111111"] {
+      fill: #F4F4F4;
+    }
+
+    /* Keep Official Certificate Paper Crisp White for Viewing & PDF Export */
+    #certificate-document,
+    #certificate-document * {
+      color-scheme: light;
+    }
+
+    /* Print Styles for Direct Browser PDF Print Fallback */
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 8mm;
+      }
+      body {
+        background: #FFFFFF !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      #certificate-export-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#FF0000] selection:text-white">
+
+  <!-- ======================================================================
+       MASTHEAD & CONTINUOUS MARQUEE HEADER
+       ====================================================================== -->
+  <header class="w-full bg-white border-brutal-b sticky top-0 z-40 no-print">
+    <!-- Top Institutional Bar -->
+      <div class="md:col-span-4 p-3 sm:p-4 border-t-[1.5px] md:border-t-0 border-[#111111] flex items-center justify-between md:justify-end gap-2.5 font-mono-tech text-[11px] uppercase">
+        <span class="text-[#111111]/70 hidden sm:inline">DIV. SDM NITIZEN</span>
+        <span class="bg-[#FF0000] text-white font-bold px-2 py-0.5 shrink-0">101 SOAL</span>
+        <button
+          type="button"
+          id="btn-theme-toggle"
+          aria-label="Ubah tampilan Light Mode atau Dark Mode"
+          title="Ubah tampilan Light Mode / Dark Mode"
+          class="btn-brutal bg-white text-[#111111] px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase inline-flex items-center gap-1.5 shrink-0"
+        >
+          <span id="theme-icon" aria-hidden="true">☾</span>
+          <span id="theme-label">DARK MODE</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Continuous Marquee Subtitle Strip -->
+    <div class="border-brutal-t flex items-stretch bg-white">
+      <div class="bg-[#FF0000] text-white font-mono-tech text-[11px] font-bold px-3 py-1.5 flex items-center gap-2 shrink-0 uppercase tracking-wider border-r-[1.5px] border-[#111111]">
+        <span>BREAKING FYP</span>
+      </div>
+      <div class="marquee-wrapper py-1.5 flex-1 flex items-center">
+        <div class="marquee-track font-mono-tech text-xs uppercase tracking-wide text-[#111111]">
+          <span class="mx-6">■ UJIAN SERTIFIKASI PENGAMAT POLITIK DADAKAN ALA NETIZEN INDONESIA 2026</span>
+          <span class="mx-6 text-[#FF0000] font-bold">■ UPDATE TERKINI: KUHP NASIONAL 2026, PENGESAHAN RUU PERAMPASAN ASET, DANANTARA, MBG, HINGGA DINAMIKA KURSI WAPRES NOV 2026</span>
+          <span class="mx-6">■ SYARAT MUTLAK: ISI IDENTITAS AKRAB, HOBY & ALAMAT MEDSOS SEBELUM MEMBEDAH KONSTELASI</span>
+          <span class="mx-6 text-[#FF0000] font-bold">■ SERTIFIKAT RESMI DAPAT DIUNDUH DALAM FORMAT PDF SIAP PAJANG DI BIO MEDSOS</span>
+          <!-- Duplicate track for seamless loop -->
+          <span class="mx-6">■ UJIAN SERTIFIKASI PENGAMAT POLITIK DADAKAN ALA NETIZEN INDONESIA 2026</span>
+          <span class="mx-6 text-[#FF0000] font-bold">■ UPDATE TERKINI: KUHP NASIONAL 2026, PENGESAHAN RUU PERAMPASAN ASET, DANANTARA, MBG, HINGGA DINAMIKA KURSI WAPRES NOV 2026</span>
+          <span class="mx-6">■ SYARAT MUTLAK: ISI IDENTITAS AKRAB, HOBY & ALAMAT MEDSOS SEBELUM MEMBEDAH KONSTELASI</span>
+          <span class="mx-6 text-[#FF0000] font-bold">■ SERTIFIKAT RESMI DAPAT DIUNDUH DALAM FORMAT PDF SIAP PAJANG DI BIO MEDSOS</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MAIN APPLICATION CONTAINER
+       ====================================================================== -->
+  <main class="flex-1 w-full max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-8">
+
+    <!-- ====================================================================
+         VIEW 1: REGISTRATION & IDENTITY BRIEFING (#view-register)
+         ==================================================================== -->
+    <section id="view-register" class="anim-slide-up">
+      <div class="bg-white border-brutal shadow-brutal grid grid-cols-1 lg:grid-cols-12">
+
+        <!-- Left 7 Columns: Editorial Headline + Identity Form -->
+        <div class="lg:col-span-7 p-5 sm:p-8 lg:border-r-[1.5px] border-[#111111] flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center gap-2 mb-4 font-mono-tech text-xs uppercase">
+              <span class="border-brutal px-2 py-0.5 bg-white font-bold">DOK. NO: KDSB-CERT-2026</span>
+              <span class="border-brutal px-2 py-0.5 bg-[#111111] text-white">KURIKULUM POLITIK RI 2026</span>
+            </div>
+
+            <h1 class="font-display font-black uppercase text-3xl sm:text-5xl leading-[0.98] tracking-tight mb-4">
+              UJIAN KOMPETENSI <span class="text-[#FF0000]">PENGAMAT POLITIK</span> DADAKAN 2026.
+            </h1>
+
+            <p class="text-sm sm:text-base text-[#111111]/85 leading-relaxed mb-6 border-l-[3px] border-[#FF0000] pl-4">
+              Uji ketajaman analisis kolom komentar Anda melalui <strong>101 butir soal</strong> aktual seputar dinamika politik, hukum, ekonomi, diplomasi, dan fenomena netizen Indonesia sepanjang tahun <strong>2026</strong>. Lulus atau tidak, sertifikat resmi berstempel Kedai Sebelah siap Anda unduh sebagai file <strong>PDF</strong>.
+            </p>
+
+            <!-- Inline Validation Alert Box (Replaces alert()) -->
+            <div id="register-error" class="hidden mb-5 border-[1.5px] border-[#FF0000] bg-[#FF0000]/5 p-3.5 flex items-start gap-3">
+              <span class="bg-[#FF0000] text-white font-mono-tech text-xs font-bold px-2 py-0.5 shrink-0">GALAT</span>
+              <p id="register-error-text" class="text-xs sm:text-sm font-medium text-[#111111]">
+                Mohon lengkapi seluruh kolom identitas peserta untuk dicetak pada sertifikat resmi.
+              </p>
+            </div>
+
+            <!-- Participant Identity Form -->
+            <form id="form-identitas" class="space-y-4" novalidate>
+              <div class="bg-[#111111] text-white px-3 py-1.5 font-mono-tech text-xs uppercase tracking-wider flex justify-between items-center">
+                <span>FORMULIR REGISTRASI PESERTA (WAJIB UNTUK SERTIFIKAT)</span>
+                <span class="text-[#FF0000] font-bold">*WAJIB ISI</span>
+              </div>
+
+              <div>
+                <label for="input-nama" class="block font-mono-tech text-xs font-bold uppercase mb-1.5">
+                  01 // NAMA AKRAB PESERTA <span class="text-[#FF0000]">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="input-nama"
+                  maxlength="55"
+                  placeholder="Contoh: Bang Jago Senayan / Mbak Rara Jalur FYP"
+                  class="w-full border-brutal bg-white px-3.5 py-3 text-sm font-medium focus:outline-none focus:border-[#FF0000] focus:ring-1 focus:ring-[#FF0000]"
+                  required
+                />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="input-hoby" class="block font-mono-tech text-xs font-bold uppercase mb-1.5">
+                    02 // HOBY UTAMA <span class="text-[#FF0000]">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="input-hoby"
+                    maxlength="60"
+                    placeholder="Contoh: Memantau Hilal Reshuffle & Ngopi"
+                    class="w-full border-brutal bg-white px-3.5 py-3 text-sm font-medium focus:outline-none focus:border-[#FF0000] focus:ring-1 focus:ring-[#FF0000]"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="input-medsos" class="block font-mono-tech text-xs font-bold uppercase mb-1.5">
+                    03 // ALAMAT MEDSOS <span class="text-[#FF0000]">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="input-medsos"
+                    maxlength="60"
+                    placeholder="Contoh: @pengamat_dadakan / x.com/kedaisebelah"
+                    class="w-full border-brutal bg-white px-3.5 py-3 text-sm font-medium focus:outline-none focus:border-[#FF0000] focus:ring-1 focus:ring-[#FF0000]"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <button
+                  type="submit"
+                  class="btn-brutal w-full bg-[#FF0000] text-white font-display font-black uppercase text-base sm:text-lg py-4 px-6 tracking-wide flex items-center justify-between"
+                >
+                  <span>MULAI UJIAN SERTIFIKASI (101 SOAL)</span>
+                  <span class="font-mono-tech text-xl">→</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="mt-6 pt-4 border-brutal-t flex flex-wrap items-center justify-between gap-2 font-mono-tech text-[11px] text-[#111111]/75">
+            <span>TIMER OTOMATIS JEDA SAAT JAWABAN DIPILIH</span>
+            <span>LANJUT OTOMATIS DI SOAL BERIKUTNYA</span>
+          </div>
+        </div>
+
+        <!-- Right 5 Columns: Blueprint SVG Diagram + 5-Tier Grading Rubric -->
+        <div class="lg:col-span-5 border-t-[1.5px] lg:border-t-0 border-[#111111] flex flex-col justify-between bg-white">
+          <!-- Blueprint SVG Schematic -->
+          <div class="p-5 border-brutal-b">
+            <div class="flex items-center justify-between font-mono-tech text-[11px] uppercase mb-2">
+              <span class="font-bold">FIG. 01 // SKEMA KALIBRASI NETIZEN</span>
+              <span class="text-[#FF0000] font-bold">REV. 2026.11</span>
+            </div>
+            <div class="border-brutal bg-white p-2">
+              <svg viewBox="0 0 420 210" class="w-full h-auto block" aria-label="Blueprint Diagram Sistem Sertifikasi">
+                <!-- Technical Grid Background inside SVG -->
+                <defs>
+                  <pattern id="bpGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#111111" stroke-width="0.4" stroke-opacity="0.18"/>
+                  </pattern>
+                </defs>
+                <rect width="420" height="210" fill="url(#bpGrid)" />
+
+                <!-- Outer Crosshairs & Dimension Ticks -->
+                <line x1="12" y1="12" x2="408" y2="12" stroke="#111111" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="12" y1="198" x2="408" y2="198" stroke="#111111" stroke-width="1" stroke-dasharray="3 3"/>
+                <text x="16" y="24" font-family="JetBrains Mono, monospace" font-size="8" fill="#111111">X:000 Y:000 // MODULAR_32PX</text>
+                <text x="328" y="24" font-family="JetBrains Mono, monospace" font-size="8" fill="#FF0000" font-weight="bold">SIGNAL: ACTIVE</text>
+
+                <!-- Node 1: Input Identitas -->
+                <rect x="22" y="45" width="96" height="54" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+                <rect x="22" y="45" width="96" height="14" fill="#111111"/>
+                <text x="27" y="55" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#FFFFFF">01. IDENTITAS</text>
+                <text x="27" y="72" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#111111">- NAMA AKRAB</text>
+                <text x="27" y="83" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#111111">- HOBY &amp; MEDSOS</text>
+
+                <!-- Arrow 1 -> 2 -->
+                <line x1="118" y1="72" x2="152" y2="72" stroke="#111111" stroke-width="1.5"/>
+                <polygon points="152,68 160,72 152,76" fill="#FF0000"/>
+
+                <!-- Node 2: 101 Soal Engine -->
+                <rect x="160" y="38" width="108" height="68" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+                <rect x="160" y="38" width="108" height="15" fill="#FF0000"/>
+                <text x="166" y="48.5" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#FFFFFF" font-weight="bold">02. UJIAN 101 SOAL</text>
+                <text x="166" y="66" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#111111">ISU RI 2026</text>
+                <text x="166" y="78" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#111111">+ LIVE TIMER</text>
+                <text x="166" y="90" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#111111">+ PAUSE ISTIRAHAT</text>
+
+                <!-- Arrow 2 -> 3 -->
+                <line x1="268" y1="72" x2="300" y2="72" stroke="#111111" stroke-width="1.5"/>
+                <polygon points="300,68 308,72 300,76" fill="#111111"/>
+
+                <!-- Node 3: Output PDF -->
+                <rect x="308" y="45" width="90" height="54" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+                <text x="315" y="61" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#FF0000" font-weight="bold">03. OUTPUT</text>
+                <text x="315" y="74" font-family="JetBrains Mono, monospace" font-size="8" fill="#FFFFFF" font-weight="bold">SERTIFIKAT</text>
+                <text x="315" y="86" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#FFFFFF">UNDUH PDF A4</text>
+
+                <!-- Lower Calibration Radar & Telemetry Bars -->
+                <circle cx="65" cy="152" r="28" fill="none" stroke="#111111" stroke-width="1.2"/>
+                <circle cx="65" cy="152" r="14" fill="none" stroke="#FF0000" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <line x1="30" y1="152" x2="100" y2="152" stroke="#111111" stroke-width="1"/>
+                <line x1="65" y1="117" x2="65" y2="187" stroke="#111111" stroke-width="1"/>
+                <circle cx="75" cy="142" r="3" fill="#FF0000"/>
+
+                <!-- Telemetry Bars -->
+                <rect x="120" y="126" width="278" height="54" fill="#FFFFFF" stroke="#111111" stroke-width="1.2"/>
+                <text x="128" y="140" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#111111" font-weight="bold">PARAMETER KOMPETENSI PENGAMAT DADAKAN:</text>
+                <rect x="128" y="147" width="210" height="7" fill="#111111"/>
+                <rect x="338" y="147" width="48" height="7" fill="#FF0000"/>
+                <text x="128" y="169" font-family="JetBrains Mono, monospace" font-size="7" fill="#111111">AKURASI FAKTA 2026 [85%] // REFLEKS KOMENTAR [15%]</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 5-Tier Certificate Level Table -->
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="font-mono-tech text-xs font-bold uppercase mb-3 flex items-center justify-between">
+                <span>KLASIFIKASI LEVEL SERTIFIKAT (101 SOAL)</span>
+                <span class="w-2.5 h-2.5 bg-[#FF0000] inline-block"></span>
+              </div>
+              <div class="border-brutal divide-y-[1.5px] divide-[#111111] font-mono-tech text-xs">
+                <div class="grid grid-cols-12 bg-[#111111] text-white font-bold">
+                  <div class="col-span-4 p-2 border-r-[1.5px] border-white/20">SKOR BENAR</div>
+                  <div class="col-span-8 p-2">PREDIKAT SERTIFIKAT</div>
+                </div>
+                <div class="grid grid-cols-12 items-center bg-white">
+                  <div class="col-span-4 p-2 font-bold text-[#FF0000] border-r-[1.5px] border-[#111111]">86 – 101</div>
+                  <div class="col-span-8 p-2 font-bold">SANGAT AHLI</div>
+                </div>
+                <div class="grid grid-cols-12 items-center bg-white">
+                  <div class="col-span-4 p-2 font-bold border-r-[1.5px] border-[#111111]">70 – 85</div>
+                  <div class="col-span-8 p-2 font-bold">AHLI</div>
+                </div>
+                <div class="grid grid-cols-12 items-center bg-white">
+                  <div class="col-span-4 p-2 font-bold border-r-[1.5px] border-[#111111]">50 – 69</div>
+                  <div class="col-span-8 p-2">SEDANG</div>
+                </div>
+                <div class="grid grid-cols-12 items-center bg-white">
+                  <div class="col-span-4 p-2 font-bold border-r-[1.5px] border-[#111111]">30 – 49</div>
+                  <div class="col-span-8 p-2">KURANG</div>
+                </div>
+                <div class="grid grid-cols-12 items-center bg-white">
+                  <div class="col-span-4 p-2 font-bold border-r-[1.5px] border-[#111111]">00 – 29</div>
+                  <div class="col-span-8 p-2">SANGAT KURANG</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3 border-brutal bg-white font-mono-tech text-[11px] leading-relaxed">
+              <strong class="uppercase">ATURAN TIMER &amp; PANITIA:</strong> Timer otomatis <strong>berhenti sementara</strong> setelah Anda memilih jawaban agar Anda leluasa membaca catatan fakta 2026, lalu <strong>berlanjut otomatis</strong> saat pindah ke soal berikutnya.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 2: ACTIVE EXAM WORKSPACE (101 QUESTIONS) (#view-exam)
+         ==================================================================== -->
+    <section id="view-exam" class="hidden space-y-5">
+
+      <!-- Telemetry HUD & Stopwatch Timer Bar -->
+      <div class="bg-white border-brutal shadow-brutal-sm grid grid-cols-1 md:grid-cols-12 items-stretch">
+        <!-- Participant Info -->
+        <div class="md:col-span-4 p-3.5 md:border-r-[1.5px] border-[#111111] flex flex-col justify-center">
+          <span class="font-mono-tech text-[10px] uppercase text-[#111111]/65">PESERTA UJIAN AKTIF</span>
+          <div class="font-display font-black uppercase text-base truncate" id="hud-nama">-</div>
+          <div class="font-mono-tech text-[11px] text-[#FF0000] truncate" id="hud-medsos">-</div>
+        </div>
+
+        <!-- Progress Telemetry -->
+        <div class="md:col-span-4 p-3.5 border-t-[1.5px] md:border-t-0 md:border-r-[1.5px] border-[#111111] flex flex-col justify-center">
+          <div class="flex justify-between items-center font-mono-tech text-xs font-bold mb-1.5">
+            <span>PROGRES: <span id="hud-answered">0</span> / 101</span>
+            <span>BENAR: <span id="hud-correct" class="text-[#FF0000]">0</span></span>
+          </div>
+          <div class="w-full h-3.5 border-brutal bg-white p-0.5">
+            <div id="hud-progress-bar" class="h-full bg-[#FF0000] transition-all duration-200" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Stopwatch Timer + Pause Button -->
+        <div class="md:col-span-4 p-3.5 border-t-[1.5px] md:border-t-0 border-[#111111] flex items-center justify-between gap-3 bg-[#111111] text-white">
+          <div>
+            <div class="font-mono-tech text-[10px] uppercase text-white/70 flex items-center gap-1.5">
+              <span id="hud-timer-dot" class="w-2 h-2 bg-[#FF0000] inline-block signal-dot"></span>
+              <span id="hud-timer-status">TIMER UJIAN</span>
+            </div>
+            <div id="hud-timer" class="font-mono-tech text-xl sm:text-2xl font-bold tracking-wider">00:00:00</div>
+          </div>
+          <button
+            type="button"
+            id="btn-pause"
+            class="btn-brutal bg-white text-[#111111] border-white font-mono-tech text-xs font-bold uppercase px-3.5 py-2.5 flex items-center gap-2 shrink-0 hover:bg-[#FF0000] hover:text-white"
+          >
+            <span>❚❚ PAUSE / ISTIRAHAT</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main 12-Column Exam Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+
+        <!-- Left 8 Columns: Active Question Stage -->
+        <div class="lg:col-span-8 bg-white border-brutal shadow-brutal">
+          <!-- Top Bar of Question Card -->
+          <div class="p-3.5 sm:px-6 border-brutal-b flex flex-wrap items-center justify-between gap-2 bg-white">
+            <div class="flex items-center gap-2.5">
+              <span id="q-number-badge" class="bg-[#111111] text-white font-mono-tech text-xs sm:text-sm font-bold px-3 py-1">
+                SOAL 001 / 101
+              </span>
+              <span id="q-category-badge" class="border-brutal px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase bg-white">
+                KATEGORI
+              </span>
+            </div>
+            <span id="q-status-badge" class="font-mono-tech text-[11px] uppercase px-2 py-0.5 border-brutal">
+              MENUNGGU JAWABAN
+            </span>
+          </div>
+
+          <!-- Animated Question Content Body -->
+          <div id="question-stage" class="p-5 sm:p-7">
+            <h2 id="q-text" class="font-display font-extrabold text-xl sm:text-2xl leading-snug text-[#111111] mb-6">
+              Memuat pertanyaan...
+            </h2>
+
+            <!-- 4 Multiple Choice Options -->
+            <div id="q-options" class="space-y-3">
+              <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- Editorial Explanation Box (Shown after answering) -->
+            <div id="q-feedback" class="hidden mt-6 border-brutal bg-white">
+              <div id="q-feedback-header" class="px-4 py-2 font-mono-tech text-xs font-bold uppercase flex items-center justify-between border-brutal-b">
+                <span id="q-feedback-verdict">VERDICT</span>
+                <span>CATATAN KEDAI SEBELAH</span>
+              </div>
+              <div class="p-4 text-sm leading-relaxed text-[#111111]" id="q-feedback-note">
+                Penjelasan...
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Navigation Controls -->
+          <div class="p-4 sm:px-6 border-brutal-t bg-white flex flex-wrap items-center justify-between gap-3">
+            <button
+              type="button"
+              id="btn-prev"
+              class="btn-brutal bg-white text-[#111111] font-mono-tech text-xs font-bold uppercase px-4 py-3"
+            >
+              ← SEBELUMNYA
+            </button>
+
+            <button
+              type="button"
+              id="btn-next-unanswered"
+              class="btn-brutal bg-white text-[#111111] font-mono-tech text-xs font-bold uppercase px-3.5 py-3 hidden sm:inline-block"
+              title="Lompat ke soal berikutnya yang belum dijawab"
+            >
+              SOAL KOSONG BERIKUTNYA ↷
+            </button>
+
+            <button
+              type="button"
+              id="btn-next"
+              class="btn-brutal bg-[#111111] text-white font-mono-tech text-xs font-bold uppercase px-5 py-3"
+            >
+              SELANJUTNYA →
+            </button>
+          </div>
+        </div>
+
+        <!-- Right 4 Columns: 101-Question Matrix Navigator + Finish Trigger -->
+        <div class="lg:col-span-4 bg-white border-brutal shadow-brutal flex flex-col">
+          <div class="p-3.5 border-brutal-b flex items-center justify-between">
+            <span class="font-mono-tech text-xs font-bold uppercase">PETA NAVIGASI (1–101)</span>
+            <div class="flex items-center gap-2 font-mono-tech text-[10px]">
+              <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 bg-[#111111] inline-block"></i> BENAR</span>
+              <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 bg-[#FF0000] inline-block"></i> SALAH</span>
+            </div>
+          </div>
+
+          <!-- 101 Buttons Matrix -->
+          <div id="question-matrix" class="p-3.5 grid grid-cols-7 sm:grid-cols-10 lg:grid-cols-7 gap-1.5 max-h-[340px] overflow-y-auto matrix-scroll">
+            <!-- Populated dynamically via JS -->
+          </div>
+
+          <!-- Finish / Issue Certificate Action Box -->
+          <div class="p-4 border-brutal-t bg-white space-y-3">
+            <div class="font-mono-tech text-[11px] text-[#111111]/80 flex justify-between">
+              <span>SISA BELUM DIJAWAB:</span>
+              <strong id="sidebar-remaining">101 SOAL</strong>
+            </div>
+            <button
+              type="button"
+              id="btn-finish-exam"
+              class="btn-brutal w-full bg-[#FF0000] text-white font-display font-black uppercase text-sm py-3.5 px-4 tracking-wide"
+            >
+              SELESAI &amp; TERBITKAN SERTIFIKAT →
+            </button>
+            <p class="font-mono-tech text-[10px] text-[#111111]/65 leading-normal">
+              *Shortcut Keyboard: Tekan <strong>A / B / C / D</strong> untuk menjawab, <strong>Panah Kiri/Kanan</strong> untuk navigasi soal.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 3: CERTIFICATE OUTPUT & PDF EXPORT (#view-certificate)
+         ==================================================================== -->
+    <section id="view-certificate" class="hidden space-y-6 anim-slide-up">
+
+      <!-- Action Toolbar (No-Print) -->
+      <div class="bg-white border-brutal shadow-brutal p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 no-print">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-[#111111] text-white font-mono-tech text-[11px] font-bold px-2.5 py-0.5 uppercase mb-1">
+            <span>PROSES SERTIFIKASI SELESAI</span>
+          </div>
+          <h2 class="font-display font-black uppercase text-xl sm:text-2xl">
+            SERTIFIKAT RESMI SIAP DIUNDUH &amp; DIPAMERKAN
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+          <button
+            type="button"
+            id="btn-download-pdf"
+            class="btn-brutal flex-1 sm:flex-initial bg-[#FF0000] text-white font-display font-black uppercase text-xs sm:text-sm px-5 py-3.5 tracking-wide flex items-center justify-center gap-2"
+          >
+            <span>↓ UNDUH SERTIFIKAT (PDF)</span>
+          </button>
+
+          <button
+            type="button"
+            id="btn-print-cert"
+            class="btn-brutal bg-white text-[#111111] font-mono-tech text-xs font-bold uppercase px-4 py-3.5"
+          >
+            CETAK / PRINT
+          </button>
+
+          <button
+            type="button"
+            id="btn-retake"
+            class="btn-brutal bg-[#111111] text-white font-mono-tech text-xs font-bold uppercase px-4 py-3.5"
+          >
+            ULANGI UJIAN
+          </button>
+        </div>
+      </div>
+
+      <!-- PDF Status Toast Banner -->
+      <div id="pdf-status-banner" class="hidden border-brutal bg-[#111111] text-white p-3.5 font-mono-tech text-xs flex items-center justify-between no-print">
+        <span id="pdf-status-text">MEMBUAT FILE PDF BERESOLUSI TINGGI...</span>
+        <span class="w-2.5 h-2.5 bg-[#FF0000] inline-block signal-dot"></span>
+      </div>
+
+      <!-- ==================================================================
+           OFFICIAL CERTIFICATE DOCUMENT (SWISS INTERNATIONAL + NEO-BRUTALIST)
+           ================================================================== -->
+      <div id="certificate-export-wrapper" class="bg-white shadow-brutal overflow-x-auto">
+        <div id="certificate-document" class="cert-paper min-w-[780px] max-w-[1120px] mx-auto p-6 sm:p-9 text-[#111111]">
+          <!-- Inner Precision 1.5px Border Frame -->
+          <div class="border-[1.5px] border-[#111111] p-5 sm:p-7 relative">
+
+            <!-- Corner Architectural Registration Marks -->
+            <span class="absolute -top-2.5 -left-2.5 bg-white px-1 font-mono-tech text-xs font-bold">+</span>
+            <span class="absolute -top-2.5 -right-2.5 bg-white px-1 font-mono-tech text-xs font-bold">+</span>
+            <span class="absolute -bottom-2.5 -left-2.5 bg-white px-1 font-mono-tech text-xs font-bold">+</span>
+            <span class="absolute -bottom-2.5 -right-2.5 bg-white px-1 font-mono-tech text-xs font-bold">+</span>
+
+            <!-- Certificate Top Institutional Header -->
+            <div class="grid grid-cols-12 border-brutal-b pb-4 mb-5 items-center gap-4">
+              <div class="col-span-8 flex items-start gap-3.5">
+                <!-- Geometric Emblem SVG -->
+                <svg width="46" height="46" viewBox="0 0 46 46" class="shrink-0" aria-hidden="true">
+                  <rect x="1" y="1" width="44" height="44" fill="#111111" />
+                  <rect x="6" y="6" width="34" height="34" fill="none" stroke="#FFFFFF" stroke-width="1.5" />
+                  <line x1="6" y1="23" x2="40" y2="23" stroke="#FF0000" stroke-width="2" />
+                  <line x1="23" y1="6" x2="23" y2="40" stroke="#FFFFFF" stroke-width="1.5" />
+                  <circle cx="23" cy="23" r="6" fill="#FF0000" />
+                </svg>
+                <div>
+                  <div class="font-mono-tech text-[10px] font-bold uppercase tracking-widest text-[#FF0000]">
+                    OTORITAS SERTIFIKASI OPINI PUBLIK &amp; WARUNG KOPI
+                  </div>
+                  <div class="font-display font-black uppercase text-base sm:text-lg leading-tight">
+                    LEMBAGA PENGAMAT PERPOLITIKAN KEDAI SEBELAH
+                  </div>
+                  <div class="font-mono-tech text-[11px] font-bold uppercase text-[#111111]/80">
+                    DIVISI PENGEMBANGAN SUMBER DAYA NITIZEN
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-span-4 text-right font-mono-tech text-[10px] space-y-1 border-l-[1.5px] border-[#111111] pl-3">
+                <div class="font-bold">NO. REGISTRASI SERTIFIKAT:</div>
+                <div id="cert-reg-number" class="bg-[#111111] text-white inline-block px-2 py-0.5 font-bold">KDSB-2026-0000</div>
+                <div>TAHUN EVALUASI: <strong>2026</strong></div>
+              </div>
+            </div>
+
+            <!-- Main Certificate Title Banner -->
+            <div class="mb-5">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h1 class="font-display font-black uppercase text-3xl sm:text-5xl tracking-tight leading-none">
+                  SERTIFIKAT KOMPETENSI
+                </h1>
+                <span class="bg-[#FF0000] text-white font-mono-tech text-xs font-bold uppercase px-3 py-1">
+                  UPDATE POLITIK RI 2026
+                </span>
+              </div>
+              <div class="mt-2 bg-[#111111] text-white px-3.5 py-1.5 font-mono-tech text-xs uppercase tracking-wider">
+                GELAR PROFESI: PENGAMAT POLITIK DADAKAN ALA NETIZEN INDONESIA
+              </div>
+            </div>
+
+            <!-- Recipient Identity Modular Grid (Nama Akrab, Hoby, Alamat Medsos) -->
+            <div class="border-brutal mb-5 bg-white">
+              <div class="px-3.5 py-1.5 border-brutal-b font-mono-tech text-[10px] font-bold uppercase bg-white flex justify-between">
+                <span>DIBERIKAN SECARA SAH KEPADA PESERTA UJIAN:</span>
+                <span>IDENTITAS TERVERIFIKASI</span>
+              </div>
+              <div class="p-4 border-brutal-b">
+                <div class="font-mono-tech text-[10px] uppercase text-[#111111]/65 mb-0.5">NAMA AKRAB</div>
+                <div id="cert-nama" class="font-display font-black uppercase text-2xl sm:text-3xl tracking-tight text-[#111111] break-words">
+                  NAMA PESERTA
+                </div>
+              </div>
+              <div class="grid grid-cols-12">
+                <div class="col-span-6 p-3.5 border-r-[1.5px] border-[#111111]">
+                  <div class="font-mono-tech text-[10px] uppercase text-[#111111]/65 mb-0.5">HOBY</div>
+                  <div id="cert-hoby" class="font-semibold text-sm sm:text-base text-[#111111] break-words">
+                    Hoby Peserta
+                  </div>
+                </div>
+                <div class="col-span-6 p-3.5">
+                  <div class="font-mono-tech text-[10px] uppercase text-[#111111]/65 mb-0.5">ALAMAT MEDSOS</div>
+                  <div id="cert-medsos" class="font-mono-tech font-bold text-xs sm:text-sm text-[#FF0000] break-words">
+                    @medsos
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Predicate Level & Score Telemetry Grid -->
+            <div class="grid grid-cols-12 border-brutal mb-5 bg-white">
+              <!-- Level / Grade Stamp -->
+              <div class="col-span-7 p-4 border-r-[1.5px] border-[#111111] flex flex-col justify-between">
+                <div>
+                  <div class="font-mono-tech text-[10px] uppercase font-bold text-[#111111]/70 mb-1">
+                    TINGKAT KELULUSAN / PREDIKAT SERTIFIKAT:
+                  </div>
+                  <div class="inline-block border-[2px] border-[#FF0000] px-3.5 py-1 mb-2 bg-white">
+                    <span id="cert-level" class="font-display font-black uppercase text-2xl sm:text-3xl text-[#FF0000] tracking-tight">
+                      SANGAT AHLI
+                    </span>
+                  </div>
+                  <p id="cert-title-desc" class="text-xs sm:text-sm font-semibold text-[#111111] leading-snug">
+                    Mahaguru Analisis Politik Jalur FYP &amp; Warung Kopi Tingkat Nasional
+                  </p>
+                </div>
+                <p id="cert-citation" class="mt-3 pt-2 border-t border-[#111111]/20 text-[11px] text-[#111111]/80 leading-relaxed">
+                  Telah menyelesaikan 101 butir uji ketangkasan isu politik Indonesia tahun 2026 dan dinyatakan berhak menyampaikan opini di kolom komentar dengan penuh percaya diri.
+                </p>
+              </div>
+
+              <!-- Score & Time Metrics -->
+              <div class="col-span-5 divide-y-[1.5px] divide-[#111111] font-mono-tech text-xs">
+                <div class="p-3 flex justify-between items-center">
+                  <span class="text-[#111111]/70">SKOR BENAR</span>
+                  <strong id="cert-score-raw" class="text-sm">0 / 101 SOAL</strong>
+                </div>
+                <div class="p-3 flex justify-between items-center">
+                  <span class="text-[#111111]/70">NILAI AKHIR</span>
+                  <strong id="cert-score-pct" class="text-sm text-[#FF0000]">0.0 / 100</strong>
+                </div>
+                <div class="p-3 flex justify-between items-center">
+                  <span class="text-[#111111]/70">DURASI UJIAN</span>
+                  <strong id="cert-duration">00:00:00</strong>
+                </div>
+                <div class="p-3 flex justify-between items-center">
+                  <span class="text-[#111111]/70">TANGGAL TERBIT</span>
+                  <strong id="cert-date">26 NOV 2026</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certificate Bottom Seal, Signature & Mandatory Copyright -->
+            <div class="grid grid-cols-12 items-end gap-4 pt-1">
+              <!-- Official Blueprint Seal SVG -->
+              <div class="col-span-4 flex items-center gap-3">
+                <svg width="86" height="86" viewBox="0 0 100 100" class="shrink-0" aria-label="Stempel Resmi Kedai Sebelah">
+                  <circle cx="50" cy="50" r="46" fill="none" stroke="#FF0000" stroke-width="2.5" />
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="#111111" stroke-width="1.2" stroke-dasharray="3 2" />
+                  <rect x="14" y="37" width="72" height="26" fill="#FFFFFF" stroke="#FF0000" stroke-width="1.8" />
+                  <text x="50" y="48" text-anchor="middle" font-family="Archivo, sans-serif" font-size="8.5" font-weight="900" fill="#FF0000">SAH &amp; VALID</text>
+                  <text x="50" y="58" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" font-weight="bold" fill="#111111">KEDAI SEBELAH 2026</text>
+                  <text x="50" y="24" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" font-weight="bold" fill="#111111">DIV. SDM NITIZEN</text>
+                  <text x="50" y="80" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" font-weight="bold" fill="#111111">TERVERIFIKASI</text>
+                </svg>
+                <div class="font-mono-tech text-[9.5px] leading-tight text-[#111111]/75">
+                  DOKUMEN INI DICETAK SECARA OTOMATIS OLEH SISTEM SERTIFIKASI TERBUKA 2026.
+                </div>
+              </div>
+
+              <!-- Center Copyright -->
+              <div class="col-span-4 text-center font-mono-tech text-[9.5px] leading-snug text-[#111111] border-x-[1px] border-[#111111]/25 px-2 py-1">
+                <strong>HAK CIPTA &amp; PENERBIT RESMI:</strong><br/>
+                Divisi Pengembangan Sumber Daya Nitizen - Lembaga Pengamat Perpolitikan Kedai Sebelah
+              </div>
+
+              <!-- Signature Block -->
+              <div class="col-span-4 text-right">
+                <div class="inline-block text-center">
+                  <!-- Vector Signature SVG -->
+                  <svg width="140" height="42" viewBox="0 0 140 42" class="mx-auto" aria-hidden="true">
+                    <path d="M12,32 C24,10 32,8 36,28 C40,38 52,12 62,22 C70,30 78,14 92,24 C104,32 116,16 130,20" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="18" y1="36" x2="124" y2="34" stroke="#FF0000" stroke-width="1.5"/>
+                  </svg>
+                  <div class="border-t-[1.5px] border-[#111111] pt-1 font-mono-tech text-[9.5px] font-bold uppercase">
+                    KEPALA DIVISI PENGEMBANGAN SDM NITIZEN
+                  </div>
+                  <div class="font-mono-tech text-[8.5px] text-[#111111]/70">
+                    LEMBAGA PENGAMAT PERPOLITIKAN KEDAI SEBELAH
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Breakdown & Answer Key Review (No-Print) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 no-print">
+        <!-- Category Breakdown -->
+        <div class="lg:col-span-5 bg-white border-brutal shadow-brutal p-5">
+          <h3 class="font-display font-black uppercase text-lg border-brutal-b pb-2.5 mb-4">
+            ANALISIS KOMPETENSI PER BIDANG
+          </h3>
+          <div id="category-breakdown" class="space-y-3 font-mono-tech text-xs">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Complete 101 Answer Key Review -->
+        <div class="lg:col-span-7 bg-white border-brutal shadow-brutal p-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-brutal-b pb-2.5 mb-4">
+            <h3 class="font-display font-black uppercase text-lg">
+              ARSIP PEMBAHASAN 101 SOAL
+            </h3>
+            <div class="flex gap-1.5 font-mono-tech text-[11px]">
+              <button type="button" data-filter="all" class="review-filter-btn btn-brutal px-2.5 py-1 bg-[#111111] text-white font-bold">SEMUA (101)</button>
+              <button type="button" data-filter="wrong" class="review-filter-btn btn-brutal px-2.5 py-1 bg-white text-[#111111]">KELIRU / KOSONG</button>
+            </div>
+          </div>
+          <div id="review-list" class="space-y-3 max-h-[460px] overflow-y-auto pr-1 matrix-scroll">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       PAUSE / BREAK OVERLAY MODAL (#modal-pause)
+       ====================================================================== -->
+  <div id="modal-pause" class="hidden fixed inset-0 z-50 bg-[#111111]/95 flex items-center justify-center p-4 no-print">
+    <div class="bg-white border-[2px] border-[#111111] shadow-brutal-red max-w-lg w-full p-6 sm:p-8 anim-slide-up">
+      <div class="flex items-center justify-between border-brutal-b pb-3 mb-4">
+        <span class="bg-[#FF0000] text-white font-mono-tech text-xs font-bold px-2.5 py-1 uppercase">
+          ❚❚ TIMER DIHENTIKAN SEMENTARA
+        </span>
+        <span id="pause-time-display" class="font-mono-tech text-sm font-bold">00:00:00</span>
+      </div>
+
+      <h2 class="font-display font-black uppercase text-2xl sm:text-3xl mb-3">
+        MODE ISTIRAHAT KEDAI SEBELAH
+      </h2>
+
+      <p id="pause-quote" class="text-sm text-[#111111]/85 leading-relaxed mb-6 border-l-[3px] border-[#111111] pl-3.5">
+        Silakan regangkan jempol, seduh kopi sachet, atau pantau grup WhatsApp keluarga sejenak. Soal disembunyikan agar integritas pengamat tetap terjaga.
+      </p>
+
+      <button
+        type="button"
+        id="btn-resume"
+        class="btn-brutal w-full bg-[#FF0000] text-white font-display font-black uppercase text-base py-4 px-6 tracking-wide"
+      >
+        ▶ LANJUTKAN MENGERJAKAN UJIAN
+      </button>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       CUSTOM CONFIRMATION MODAL (Replaces confirm() for Early Submit / Retake)
+       ====================================================================== -->
+  <div id="modal-confirm" class="hidden fixed inset-0 z-50 bg-[#111111]/85 flex items-center justify-center p-4 no-print">
+    <div class="bg-white border-[2px] border-[#111111] shadow-brutal max-w-md w-full p-6 anim-slide-up">
+      <div class="font-mono-tech text-xs font-bold uppercase text-[#FF0000] mb-1" id="confirm-tag">
+        KONFIRMASI SISTEM
+      </div>
+      <h3 class="font-display font-black uppercase text-xl mb-2.5" id="confirm-title">
+        TERBITKAN SERTIFIKAT SEKARANG?
+      </h3>
+      <p class="text-sm text-[#111111]/85 leading-relaxed mb-5" id="confirm-body">
+        Masih ada soal yang belum dijawab. Soal kosong akan dihitung bernilai 0.
+      </p>
+      <div class="grid grid-cols-2 gap-3 font-mono-tech text-xs font-bold">
+        <button type="button" id="btn-confirm-cancel" class="btn-brutal bg-white text-[#111111] py-3 px-4 uppercase">
+          BATAL
+        </button>
+        <button type="button" id="btn-confirm-ok" class="btn-brutal bg-[#FF0000] text-white py-3 px-4 uppercase">
+          YA, LANJUTKAN
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       FOOTER WITH MANDATORY COPYRIGHT
+       ====================================================================== -->
+  <footer class="w-full bg-white border-brutal-t mt-10 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 font-mono-tech text-[11px]">
+      <div class="font-bold text-center sm:text-left">
+        &copy; 2026 Divisi Pengembangan Sumber Daya Nitizen - Lembaga Pengamat Perpolitikan Kedai Sebelah.
+      </div>
+      <div class="text-[#111111]/70">
+        SISTEM SERTIFIKASI TERBUKA // 101 BUTIR SOAL POLITIK RI 2026
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       APPLICATION LOGIC & 101 CURATED 2026 INDONESIAN POLITICS QUESTIONS
+       ====================================================================== -->
+  <script>
+    /**
+     * BANK 101 SOAL UPDATE POLITIK INDONESIA 2026
+     * Grounded in real 2026 Indonesian legislative, constitutional, economic,
+     * diplomatic, and netizen political developments.
+     */
+    const QUESTIONS_DATA = [
+      // --- KATEGORI 1: HUKUM & KUHP NASIONAL 2026 (001 - 011) ---
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Mulai tanggal 2 Januari 2026, Kitab Undang-Undang Hukum Pidana (KUHP) Nasional baru (UU No. 1 Tahun 2023) resmi berlaku menggantikan warisan kolonial. Apa salah satu terobosan pemidanaan utama di dalamnya?",
+        options: [
+          "Pidana alternatif berupa kerja sosial dan pengawasan untuk mengurangi kepadatan lapas",
+          "Penghapusan seluruh sanksi denda bagi korporasi",
+          "Sidang pidana wajib disiarkan langsung di TikTok setiap malam",
+          "Semua pelanggaran lalu lintas otomatis diputus lewat voting kolom komentar"
+        ],
+        answer: 0,
+        note: "KUHP Nasional yang berlaku efektif 2 Januari 2026 memperkenalkan pidana alternatif seperti pidana kerja sosial dan pengawasan guna menekan overcrowding lapas."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Untuk menyelaraskan ribuan aturan pidana di luar KUHP agar tidak tumpang tindih saat KUHP Nasional berlaku pada 2026, pemerintah dan DPR mengesahkan undang-undang transisi yakni...",
+        options: [
+          "UU No. 1 Tahun 2026 tentang Penyesuaian Pidana",
+          "UU Darurat Klarifikasi Netizen 2026",
+          "Perppu Anti-Baper di Media Sosial",
+          "UU Penghapusan Pasal Karet Secara Sepihak"
+        ],
+        answer: 0,
+        note: "UU No. 1 Tahun 2026 tentang Penyesuaian Pidana hadir sebagai jembatan harmonisasi agar aturan pidana di luar KUHP selaras dengan paradigma KUHP baru."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Dalam KUHP Nasional yang mulai berlaku pada 2026, pasal mengenai perzinahan dan kohabitasi (Pasal 411–412) ramai dibahas netizen. Bagaimana sifat delik pasal tersebut secara hukum?",
+        options: [
+          "Delik aduan absolut yang hanya dapat dilaporkan oleh suami/istri, orang tua, atau anak",
+          "Delik umum yang bisa dilaporkan oleh ketua RT atau warganet acak",
+          "Delik otomatis yang diproses lewat patroli drone setiap akhir pekan",
+          "Delik perdata yang diselesaikan lewat lelang barang antik"
+        ],
+        answer: 0,
+        note: "Sesuai Pasal 411–412 KUHP Nasional, ketentuan tersebut merupakan delik aduan absolut sehingga tidak bisa dilaporkan sembarang pihak luar."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Dalam pemberlakuan KUHP Nasional 2026, korporasi dan pengendali manfaat (Ultimate Beneficial Owner / UBO) kini memiliki kedudukan hukum sebagai...",
+        options: [
+          "Subjek tindak pidana yang dapat dimintai pertanggungjawaban pidana",
+          "Pihak yang kebal hukum selama rajin membuat acara CSR",
+          "Saksi ahli wajib dalam setiap sengketa pemilu",
+          "Entitas yang hanya boleh dihukum teguran lisan"
+        ],
+        answer: 0,
+        note: "KUHP Nasional 2026 secara tegas menetapkan korporasi serta pengurus/pengendali manfaatnya sebagai subjek hukum pidana."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Pasal 53 KUHP Nasional 2026 menjadi topik diskursus para ahli hukum dan netizen melek konstitusi karena memberikan pedoman kepada hakim apabila terjadi pertentangan antara kepastian hukum dan keadilan, yakni...",
+        options: [
+          "Hakim wajib mengutamakan keadilan",
+          "Hakim wajib mengikuti polling tertinggi di platform X",
+          "Hakim harus menunda putusan sampai tahun anggaran berikutnya",
+          "Hakim menyerahkan palu sidang kepada panitera"
+        ],
+        answer: 0,
+        note: "Pasal 53 ayat (2) KUHP Nasional menegaskan bahwa jika terdapat pertentangan antara kepastian hukum dan keadilan, hakim wajib mengutamakan keadilan."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Istilah 'Living Law' dalam KUHP Nasional yang mulai berlaku pada 2026 merujuk pada pengakuan terhadap...",
+        options: [
+          "Hukum yang hidup dalam masyarakat (hukum adat) sepanjang sesuai nilai Pancasila dan UUD 1945",
+          "Aturan tidak tertulis yang dibuat oleh admin grup WhatsApp kompleks",
+          "Tren viral mingguan yang disepakati kreator konten",
+          "Hukum acara yang hanya berlaku saat siaran langsung televisi"
+        ],
+        answer: 0,
+        note: "Pasal 2 KUHP Nasional mengakui keberadaan hukum yang hidup dalam masyarakat (living law) dengan batasan tetap selaras dengan Pancasila, UUD 1945, dan HAM."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Asas 'tiada pidana tanpa kesalahan' yang ditegaskan secara eksplisit dalam KUHP Nasional 2026 dikenal dalam istilah hukum sebagai prinsip...",
+        options: [
+          "Mens Rea (sikap batin atau kesalahan pelaku)",
+          "FOMO (Fear of Missing Out)",
+          "Ad Hominem",
+          "Status Quo"
+        ],
+        answer: 0,
+        note: "KUHP Nasional menegaskan asas legalitas materiil sekaligus prinsip mens rea (tiada pidana tanpa kesalahan) dalam Pasal 36."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Bersamaan dengan berlakunya KUHP Nasional pada awal Januari 2026, perangkat hukum acara pidana yang turut diperbarui agar proses penyidikan hingga persidangan selaras adalah...",
+        options: [
+          "KUHAP (Kitab Undang-Undang Hukum Acara Pidana) baru",
+          "Tata Tertib Lomba Debat Antar-Kelurahan",
+          "Pedoman Teknis Komentar Netizen Budiman",
+          "Kitab Undang-Undang Perdagangan Internasional"
+        ],
+        answer: 0,
+        note: "Pembaruan KUHAP berjalan beriringan dengan berlakunya KUHP Nasional pada 2026 untuk memperkuat keadilan restoratif dan perlindungan hak tersangka maupun korban."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Dalam pendekatan pemidanaan modern pada KUHP 2026, pengguna narkotika lebih diarahkan pada pendekatan...",
+        options: [
+          "Rehabilitasi medis dan rehabilitasi sosial",
+          "Pengasingan ke pulau terpencil tanpa sinyal",
+          "Wajib menjadi moderator forum diskusi politik",
+          "Denda dibayar menggunakan koin gim daring"
+        ],
+        answer: 0,
+        note: "KUHP Nasional memperkuat pendekatan kesehatan dan pemulihan melalui rehabilitasi medis serta sosial."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Ketika netizen berdebat soal pasal penghinaan terhadap lembaga negara dalam KUHP 2026, syarat mutlak agar perkara tersebut dapat diproses adalah...",
+        options: [
+          "Merupakan delik aduan yang hanya bisa diadukan langsung oleh pimpinan lembaga negara terkait",
+          "Dapat dilaporkan oleh simpatisan partai mana pun",
+          "Otomatis diproses jika jumlah retweet menembus 10.000",
+          "Dapat diadukan secara anonim melalui formulir daring"
+        ],
+        answer: 0,
+        note: "Delik penghinaan terhadap lembaga negara dalam KUHP Nasional bersifat delik aduan khusus yang hanya dapat diajukan oleh pimpinan lembaga bersangkutan."
+      },
+      {
+        cat: "HUKUM & KUHP 2026",
+        q: "Peran Balai Pemasyarakatan (Bapas) meningkat signifikan sejak berlakunya KUHP Nasional 2026 karena tugasnya menyusun...",
+        options: [
+          "Penelitian kemasyarakatan (Litmas) sebagai bahan pertimbangan hakim dalam pidana alternatif",
+          "Jadwal piket ronda malam di kompleks parlemen",
+          "Daftar peringkat pengamat politik paling vokal",
+          "Naskah pidato kenegaraan akhir tahun"
+        ],
+        answer: 0,
+        note: "Litmas dari Bapas menjadi instrumen penting bagi hakim dalam menentukan kelayakan pidana pengawasan atau kerja sosial."
+      },
+
+      // --- KATEGORI 2: LEGISLASI & PARLEMEN DPR RI 2026 (012 - 021) ---
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Pada Rapat Paripurna Ke-13 tanggal 19 November 2026, DPR RI bersama pemerintah akhirnya mengesahkan salah satu RUU yang paling lama dinanti publik dalam pemberantasan korupsi, yaitu...",
+        options: [
+          "RUU Perampasan Aset menjadi Undang-Undang",
+          "RUU Pengaturan Jam Tidur Siang Pegawai",
+          "RUU Pajak Gorengan dan Kopi Sachet",
+          "RUU Pembatasan Jumlah Akun Alter Netizen"
+        ],
+        answer: 0,
+        note: "Pada 19 November 2026, Rapat Paripurna Ke-13 DPR RI resmi menyetujui pengesahan RUU Perampasan Aset menjadi Undang-Undang."
+      },
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Dalam Rapat Paripurna DPR perdana Januari 2026 yang dipimpin Ketua DPR Puan Maharani, terdapat 9 isu strategis yang disorot AKD DPR. Salah satu isu hukum utamanya adalah...",
+        options: [
+          "Proses reformasi Polri, Kejaksaan RI, dan Pengadilan untuk kepastian hukum masyarakat",
+          "Pembentukan badan khusus penilai meme politik terbaik",
+          "Penggantian palu sidang menjadi bel sepeda",
+          "Penghapusan masa reses anggota dewan selamanya"
+        ],
+        answer: 0,
+        note: "Rapat Paripurna perdana DPR Januari 2026 menetapkan 9 isu strategis, termasuk reformasi Polri, Kejaksaan, dan Pengadilan."
+      },
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Selain reformasi penegak hukum, isu lingkungan hidup yang menjadi perhatian DPR RI dalam agenda pengawasan tahun 2026 adalah...",
+        options: [
+          "Evaluasi pemberian izin pemanfaatan dan alih fungsi hutan serta rekonstruksi pascabencana Sumatera",
+          "Pembangunan taman bermain salju di seluruh kantor kecamatan",
+          "Larangan menanam pohon mangga di halaman rumah dinas",
+          "Ekspor pasir pantai secara bebas tanpa analisis dampak lingkungan"
+        ],
+        answer: 0,
+        note: "Evaluasi izin alih fungsi hutan dan penanganan rekonstruksi banjir-longsor di Sumatera masuk dalam daftar prioritas pengawasan DPR RI 2026."
+      },
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Pada Pembukaan Masa Persidangan II Tahun Sidang 2026–2027 tanggal 10 November 2026, Ketua DPR Puan Maharani menegaskan DPR mengawal sebanyak berapa isu strategis nasional?",
+        options: [
+          "12 isu strategis yang menjadi perhatian masyarakat",
+          "3 isu ringan seputar kuliner Nusantara",
+          "99 isu rahasia negara",
+          "1 isu tunggal tentang renovasi pagar gedung"
+        ],
+        answer: 0,
+        note: "Pada 10 November 2026, Ketua DPR RI menyampaikan komitmen parlemen mengawal 12 isu strategis masyarakat di Masa Persidangan II 2026–2027."
+      },
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Instrumen konstitusional DPR RI yang sering menjadi bahan diskusi pengamat tata negara pada November 2026 terkait evaluasi kebijakan pemerintah adalah...",
+        options: [
+          "Hak Interpelasi, Hak Angket, dan Hak Menyatakan Pendapat",
+          "Hak Unfollow dan Blokir Akun Kementerian",
+          "Hak Menentukan Skor Akhir Pertandingan Bola",
+          "Hak Veto Pribadi Ketua Fraksi"
+        ],
+        answer: 0,
+        note: "Pasal 20A ayat (2) UUD 1945 memberikan tiga hak utama kepada DPR: interpelasi, angket, dan menyatakan pendapat."
+      },
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Dalam siklus anggaran negara tahun 2026, peran DPR RI melalui Badan Anggaran (Banggar) bersama pemerintah adalah membahas dan menyetujui...",
+        options: [
+          "Rancangan Undang-Undang APBN beserta postur belanja dan pembiayaan negara",
+          "Daftar harga menu sarapan di warung sekitar Senayan",
+          "Jumlah pengikut minimal untuk menjadi staf ahli",
+          "Tarif parkir kendaraan roda dua di seluruh mal"
+        ],
+        answer: 0,
+        note: "Fungsi anggaran DPR dilaksanakan melalui pembahasan dan persetujuan RUU APBN bersama pemerintah."
+      },
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Ketika DPR RI memasuki 'Masa Reses' di sela-sela masa persidangan tahun 2026, kegiatan resmi yang seharusnya dilakukan anggota dewan adalah...",
+        options: [
+          "Turun ke daerah pemilihan (Dapil) untuk menyerap aspirasi konstituen",
+          "Berlibur ke luar negeri menggunakan anggaran dana aspirasi",
+          "Menonaktifkan seluruh kanal pengaduan masyarakat",
+          "Mengadakan turnamen gim daring antar-komisi"
+        ],
+        answer: 0,
+        note: "Masa reses adalah waktu kerja anggota DPR di luar gedung parlemen untuk mengunjungi dapil dan menyerap aspirasi rakyat."
+      },
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Alat Kelengkapan Dewan (AKD) di DPR RI yang khusus bertugas menyusun, merencanakan, dan mengharmonisasikan Program Legislasi Nasional (Prolegnas) 2026 adalah...",
+        options: [
+          "Badan Legislasi (Baleg)",
+          "Badan Meteorologi dan Klimatologi",
+          "Badan Pengawas Obat dan Makanan",
+          "Badan Usaha Milik Netizen"
+        ],
+        answer: 0,
+        note: "Badan Legislasi (Baleg) DPR RI berperan sentral dalam penyusunan dan evaluasi Prolegnas tahunan maupun jangka menengah."
+      },
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Dalam pembahasan undang-undang di DPR RI tahun 2026, mekanisme mengundang akademisi, pakar, dan masyarakat sipil untuk memberi masukan disebut...",
+        options: [
+          "Rapat Dengar Pendapat Umum (RDPU)",
+          "Sesi Roast dan Stand-Up Comedy Parlemen",
+          "Kuis Berhadiah Langsung",
+          "Sidang Tertutup Tanpa Notulensi"
+        ],
+        answer: 0,
+        note: "RDPU merupakan forum partisipasi bermakna (meaningful participation) bagi publik dan akademisi dalam pembentukan UU."
+      },
+      {
+        cat: "LEGISLASI & DPR 2026",
+        q: "Wacana perubahan UU Ketenagakerjaan serta pelindungan pekerja digital/gig economy kembali mengemuka pada November 2026. Lembaga legislatif yang memiliki kewenangan membentuk UU bersama Presiden adalah...",
+        options: [
+          "DPR RI (dengan pertimbangan DPD RI untuk hal terkait otonomi daerah)",
+          "Mahkamah Konstitusi secara sepihak",
+          "Komisi Pemilihan Umum",
+          "Asosiasi Pengamat Politik Dadakan"
+        ],
+        answer: 0,
+        note: "Sesuai Pasal 20 UUD 1945, DPR memegang kekuasaan membentuk undang-undang yang dibahas bersama Presiden untuk mendapat persetujuan bersama."
+      },
+
+      // --- KATEGORI 3: EKONOMI POLITIK, APBN & DANANTARA 2026 (022 - 031) ---
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Badan Pengelola Investasi (BPI) Daya Anagata Nusantara atau Danantara menjadi pusat perhatian ekonomi-politik Indonesia pada 2026. Apa fungsi utama lembaga ini?",
+        options: [
+          "Mengelola dan mengonsolidasikan aset serta investasi strategis negara dan BUMN",
+          "Mengatur jadwal tayang sinetron dan serial lokal",
+          "Mengelola dana kas RT/RW seluruh Indonesia",
+          "Menggantikan fungsi Bank Indonesia dalam mencetak uang kertas"
+        ],
+        answer: 0,
+        note: "Danantara dibentuk sebagai sovereign wealth fund / pengelola investasi strategis negara untuk mengoptimalkan nilai aset BUMN."
+      },
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Pada November 2026, pemerintah menerbitkan Peraturan Pemerintah (PP) Nomor 41 Tahun 2026 terkait Danantara. Insentif perpajakan apa yang diatur dalam PP 41/2026 tersebut?",
+        options: [
+          "PPh final 0% untuk mendukung penataan struktur kepemilikan entitas di dalam tubuh Danantara",
+          "Penghapusan pajak kendaraan bermotor bagi seluruh warganet",
+          "Pajak tambahan 50% bagi pembeli kopi kekinian",
+          "Bebas bea masuk untuk seluruh barang mewah impor"
+        ],
+        answer: 0,
+        note: "PP 41/2026 memberikan fasilitas PPh final 0% untuk penataan struktur kepemilikan entitas dalam tubuh Danantara hingga 31 Desember 2029."
+      },
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Tema Rencana Kerja Pemerintah (RKP) Tahun 2026 yang menjadi kompas kebijakan pembangunan nasional adalah...",
+        options: [
+          "Kedaulatan Pangan dan Energi serta Ekonomi yang Produktif dan Inklusif",
+          "Swasembada Konten Viral dan Ekspor Meme Nasional",
+          "Pembangunan Gedung Pencakar Langit di Setiap Desa",
+          "Pengurangan Jam Kerja Nasional Menjadi Dua Hari"
+        ],
+        answer: 0,
+        note: "RKP 2026 mengusung tema 'Kedaulatan Pangan dan Energi serta Ekonomi yang Produktif dan Inklusif'."
+      },
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Sesuai amanat Pasal 31 ayat (4) UUD 1945 yang tetap dijaga dalam postur APBN 2026, berapa porsi minimal anggaran pendidikan dari total belanja negara?",
+        options: [
+          "Sekurang-kurangnya 20% dari APBN",
+          "Maksimal 5% dari sisa anggaran akhir tahun",
+          "Tepat 50% dari pendapatan pajak kendaraan",
+          "Tidak ditentukan dan bergantung pada donasi sukarela"
+        ],
+        answer: 0,
+        note: "Konstitusi mewajibkan negara memprioritaskan anggaran pendidikan sekurang-kurangnya 20% dari APBN dan APBD."
+      },
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Dalam kebijakan fiskal tahun 2026, pemerintah berupaya menjaga batas aman defisit APBN sesuai UU Keuangan Negara agar tetap di bawah ambang batas maksimal sebesar...",
+        options: [
+          "3% terhadap Produk Domestik Bruto (PDB)",
+          "25% terhadap Produk Domestik Bruto (PDB)",
+          "50% dari total cadangan devisa",
+          "0,01% dari anggaran perjalanan dinas"
+        ],
+        answer: 0,
+        note: "Berdasarkan UU No. 17 Tahun 2003 tentang Keuangan Negara, defisit APBN dibatasi maksimal 3% dari PDB."
+      },
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Salah satu langkah konkret pemerintah tahun 2026 untuk meningkatkan kesejahteraan tenaga pendidik dalam RKP 2026 adalah...",
+        options: [
+          "Menambah kuota tunjangan profesi guru honorer baik negeri maupun swasta",
+          "Mengganti gaji guru dengan voucer belanja daring",
+          "Mewajibkan guru mencari sponsor pribadi untuk ruang kelas",
+          "Menghapus seluruh tunjangan sertifikasi pendidik"
+        ],
+        answer: 0,
+        note: "Dalam arah kebijakan RKP 2026, pemerintah mengalokasikan penambahan kuota tunjangan profesi bagi guru honorer negeri dan swasta."
+      },
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Untuk mendorong kemandirian fiskal pemerintah daerah pada tahun 2026, kebijakan Transfer ke Daerah (TKD) diarahkan berbasis pada...",
+        options: [
+          "Kinerja (performance-based) guna meningkatkan belanja daerah yang produktif",
+          "Kedekatan emosional kepala daerah dengan admin media sosial",
+          "Jumlah baliho ucapan selamat yang terpasang di jalan protokol",
+          "Undian arisan bulanan antar-provinsi"
+        ],
+        answer: 0,
+        note: "Kebijakan TKD 2026 diperkuat berbasis kinerja agar belanja APBD lebih produktif dan mengurangi ketergantungan daerah pada pusat."
+      },
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Pada acara Indonesia Economic Outlook 2026 di Wisma Danantara Indonesia (Februari 2026), pemerintah menekankan bahwa motor pertumbuhan ekonomi akar rumput didorong oleh...",
+        options: [
+          "Peningkatan konsumsi rumah tangga dan perputaran ekonomi lokal di desa dan kecamatan",
+          "Penjualan tiket konser musik mancanegara di ibu kota",
+          "Spekulasi aset kripto oleh aparatur sipil negara",
+          "Impor beras dan gula secara besar-besaran sepanjang tahun"
+        ],
+        answer: 0,
+        note: "Dalam forum Indonesia Economic Outlook 2026 di Wisma Danantara, pemerintah menyoroti penguatan konsumsi rumah tangga dan ekonomi desa."
+      },
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Dalam strategi ketahanan energi RKP 2026, sumber energi terbarukan berbasis panas bumi yang mendapat prioritas pengembangan pemerintah disebut...",
+        options: [
+          "Geothermal",
+          "Batu bara kalori rendah",
+          "Minyak tanah bersubsidi",
+          "Generator tenaga gosip tetangga"
+        ],
+        answer: 0,
+        note: "Pengembangan energi bersih berbasis panas bumi (geothermal) menjadi salah satu prioritas transisi energi dalam RKP 2026."
+      },
+      {
+        cat: "EKONOMI & DANANTARA",
+        q: "Apa tujuan utama penyediaan Saldo Anggaran Lebih (SAL) sebagai 'fiscal buffer' dalam pengelolaan APBN 2026?",
+        options: [
+          "Mengantisipasi ketidakpastian ekonomi global dan gejolak pasar keuangan",
+          "Membeli perlengkapan gim bagi seluruh kementerian",
+          "Membayar denda keterlambatan rapat paripurna",
+          "Menutup biaya iklan kampanye pemilu lima tahun mendatang"
+        ],
+        answer: 0,
+        note: "SAL dimanfaatkan sebagai penyangga fiskal (fiscal buffer) untuk meredam risiko gejolak eksternal maupun perlambatan pendapatan."
+      },
+
+      // --- KATEGORI 4: PROGRAM PRIORITAS & MAKAN BERGIZI GRATIS 2026 (032 - 041) ---
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Program Makan Bergizi Gratis (MBG) memasuki skala implementasi luas pada tahun 2026. Badan pemerintah khusus yang dibentuk untuk mengoordinasikan penyelenggaraan program ini adalah...",
+        options: [
+          "Badan Gizi Nasional (BGN)",
+          "Badan Pengawas Kuliner Viral",
+          "Komisi Pemberantasan Rasa Lapar",
+          "Lembaga Sensor Menu Kantin"
+        ],
+        answer: 0,
+        note: "Badan Gizi Nasional (BGN) merupakan lembaga pemerintah yang bertugas melaksanakan pemenuhan gizi nasional termasuk program MBG."
+      },
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Menurut paparan Kemenko Perekonomian pada Februari 2026, dampak ekonomi berganda (multiplier effect) yang diharapkan dari program Makan Bergizi Gratis di tingkat lokal adalah...",
+        options: [
+          "Mendorong serapan hasil pertanian lokal, peternakan, distribusi pangan, dan UMKM daerah",
+          "Mematikan seluruh warung makan tradisional di sekitar sekolah",
+          "Mewajibkan impor seluruh bahan baku makanan dari luar negeri",
+          "Mengalihkan seluruh dana desa untuk membeli kemasan plastik"
+        ],
+        answer: 0,
+        note: "Program MBG dirancang menggunakan rantai pasok pangan lokal sehingga menggerakkan petani, peternak, dan UMKM di sekitar satuan pelayanan."
+      },
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Selain peserta didik di sekolah, kelompok rentan lain yang menjadi sasaran prioritas dalam program pemenuhan gizi nasional tahun 2026 adalah...",
+        options: [
+          "Ibu hamil, ibu menyusui, dan anak balita untuk menekan angka stunting",
+          "Kolektor mobil mewah dan pemilik kapal pesiar",
+          "Pengamat politik yang aktif begadang di media sosial",
+          "Wisatawan mancanegara yang sedang transit di bandara"
+        ],
+        answer: 0,
+        note: "Sasaran utama MBG mencakup anak sekolah, santri, balita, ibu hamil, dan ibu menyusui guna meningkatkan kualitas SDM dan mencegah stunting."
+      },
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Di ruang publik dan media sosial sepanjang 2026, salah satu aspek teknis pelaksanaan MBG yang paling sering diawasi dan dikomentari netizen adalah...",
+        options: [
+          "Standar higienitas dapur (SPPG), ketepatan jam distribusi, dan variasi menu gizi seimbang",
+          "Warna seragam koki yang harus serasi dengan warna sepatu siswa",
+          "Wajib adanya sesi foto selfie sebelum kotak makan dibuka",
+          "Penilaian rasa makanan oleh juri kontes memasak internasional"
+        ],
+        answer: 0,
+        note: "Kualitas higienitas Satuan Pelayanan Pemenuhan Gizi (SPPG), ketepatan waktu kirim, dan komposisi gizi menjadi sorotan utama pengawasan publik."
+      },
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Dalam kerangka pembangunan jangka panjang menuju visi Indonesia Emas 2045, program Makan Bergizi Gratis 2026 diposisikan pemerintah sebagai...",
+        options: [
+          "Investasi strategis jangka panjang pembangunan kualitas sumber daya manusia (SDM)",
+          "Program hiburan sesaat menjelang libur akhir semester",
+          "Pengganti seluruh mata pelajaran olahraga di sekolah",
+          "Bantuan tunai langsung yang dibagikan di pusat perbelanjaan"
+        ],
+        answer: 0,
+        note: "Pemerintah memosisikan MBG sebagai investasi SDM jangka panjang untuk meningkatkan kesehatan, konsentrasi belajar, dan produktivitas generasi mendatang."
+      },
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Pelibatan unsur TNI dan koperasi/BUMDes dalam dukungan logistik serta penyediaan dapur MBG di wilayah terpencil tahun 2026 memicu diskusi publik mengenai...",
+        options: [
+          "Efektivitas jangkauan distribusi di daerah 3T sekaligus batas peran sipil-militer dalam program sipil",
+          "Kewajiban siswa melakukan baris-berbaris sebelum makan siang",
+          "Penggantian menu nasi menjadi ransum tempur setiap hari",
+          "Larangan penggunaan sendok dan garpu di ruang kelas"
+        ],
+        answer: 0,
+        note: "Keterlibatan aparat teritorial dalam rantai logistik MBG dipandang mempercepat distribusi di daerah sulit, namun juga dikritisi akademisi terkait batas fungsi sipil."
+      },
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Untuk menjaga akuntabilitas anggaran MBG yang bernilai ratusan triliun rupiah pada tahun 2026, lembaga audit negara yang berwenang memeriksa pengelolaan keuangannya adalah...",
+        options: [
+          "Badan Pemeriksa Keuangan (BPK) dan BPKP",
+          "Komisi Penyiaran Indonesia (KPI)",
+          "Persatuan Artis Film Indonesia",
+          "Dewan Kehormatan Netizen"
+        ],
+        answer: 0,
+        note: "BPK dan BPKP melakukan audit dan pengawasan berlapis terhadap tata kelola anggaran program prioritas nasional."
+      },
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Dalam penyelenggaraan ibadah haji tahun 2026 yang turut masuk dalam 9 isu strategis DPR RI, kelembagaan baru yang menangani urusan haji dan umrah adalah...",
+        options: [
+          "Badan Penyelenggara Haji (BP Haji)",
+          "Kementerian Pariwisata dan Kuliner Timur Tengah",
+          "Badan Pengelola Transportasi Udara Nasional",
+          "Komite Pemantau Cuaca Tanah Suci"
+        ],
+        answer: 0,
+        note: "Badan Penyelenggara Haji (BP Haji) dibentuk pada era Kabinet Merah Putih untuk mengelola penyelenggaraan ibadah haji secara lebih fokus."
+      },
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Program pemeriksaan kesehatan gratis bagi masyarakat yang berulang tahun juga menjadi salah satu program unggulan layanan publik pemerintah pada 2026 di bawah koordinasi...",
+        options: [
+          "Kementerian Kesehatan RI melalui Puskesmas dan fasilitas kesehatan tingkat pertama",
+          "Kementerian Perdagangan melalui pasar swalayan",
+          "Badan Pusat Statistik melalui sensus daring",
+          "Kementerian Luar Negeri melalui kantor kedutaan"
+        ],
+        answer: 0,
+        note: "Program Cek Kesehatan Gratis (CKG) dijalankan Kemenkes melalui Puskesmas untuk deteksi dini penyakit masyarakat."
+      },
+      {
+        cat: "KEBIJAKAN & MBG 2026",
+        q: "Dalam kebijakan pelindungan pekerja dan penguatan daya beli masyarakat kelas menengah tahun 2026, pemerintah memperkuat akses pembiayaan UMKM melalui skema...",
+        options: [
+          "Kredit Usaha Rakyat (KUR) dan pembiayaan Ultra Mikro (UMi)",
+          "Pinjaman online berbunga harian tanpa izin OJK",
+          "Arisan berantai di grup percakapan anonim",
+          "Gadai sertifikat pengamat politik dadakan"
+        ],
+        answer: 0,
+        note: "KUR dan pembiayaan Ultra Mikro (UMi) tetap menjadi instrumen utama pemerintah memperluas akses modal bagi UMKM."
+      },
+
+      // --- KATEGORI 5: KONSTITUSI, KABINET & DINAMIKA EKSEKUTIF 2026 (042 - 051) ---
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Peristiwa politik besar pada November 2026 terkait pengunduran diri Wakil Presiden Gibran Rakabuming Raka memicu diskusi luas tentang tata cara pengisian kekosongan jabatan Wakil Presiden. Berdasarkan Pasal 8 ayat (2) UUD 1945, siapa yang mengusulkan calon Wakil Presiden?",
+        options: [
+          "Presiden mengusulkan dua calon kepada Majelis Permusyawaratan Rakyat (MPR)",
+          "Ketua KPU menunjuk langsung pemenang suara terbanyak kedua",
+          "Mahkamah Agung mengadakan pemilihan umum ulang dalam 7 hari",
+          "Netizen memilih lewat jajak pendapat di portal berita"
+        ],
+        answer: 0,
+        note: "Pasal 8 ayat (2) UUD 1945 mengatur bahwa jika terjadi kekosongan Wakil Presiden, selambat-lambatnya dalam waktu 60 hari MPR menyelenggarakan sidang untuk memilih Wapres dari dua calon yang diusulkan Presiden."
+      },
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Sesuai Pasal 8 ayat (2) UUD 1945, berapa batas waktu maksimal bagi MPR untuk menyelenggarakan sidang guna memilih Wakil Presiden baru setelah terjadi kekosongan jabatan?",
+        options: [
+          "Selambat-lambatnya dalam waktu 60 hari",
+          "Selambat-lambatnya dalam waktu 24 jam",
+          "Menunggu jadwal pemilu serentak lima tahun berikutnya",
+          "Tepat 365 hari sejak surat pengunduran diri dibacakan"
+        ],
+        answer: 0,
+        note: "Konstitusi menetapkan tenggat waktu maksimal 60 hari bagi MPR untuk bersidang memilih Wakil Presiden dari dua calon usulan Presiden."
+      },
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Dalam struktur Kabinet Merah Putih yang berjalan di tahun 2026, Kementerian Hukum dan Hak Asasi Manusia sebelumnya telah ditata ulang menjadi tiga kementerian teknis di bawah koordinasi...",
+        options: [
+          "Kementerian Koordinator Bidang Hukum, Hak Asasi Manusia, Imigrasi, dan Pemasyarakatan (Kemenko Kumham Imipas)",
+          "Kementerian Koordinator Bidang Maritim dan Netizen",
+          "Badan Pembinaan Ideologi dan Konten Digital",
+          "Sekretariat Jenderal Urusan Parlemen"
+        ],
+        answer: 0,
+        note: "Nomenklatur Kabinet Merah Putih membentuk Kemenko Kumham Imipas yang mengoordinasikan Kementerian Hukum, Kementerian HAM, serta Kementerian Imigrasi dan Pemasyarakatan."
+      },
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Dalam kolumnis politik nasional pada November 2026, sikap mantan Presiden Joko Widodo yang menahan respons terbuka dan menghindari konfrontasi verbal di tengah dinamika kursi Wapres disebut dengan metafora...",
+        options: [
+          "Politik 'Silent Treatment'",
+          "Politik 'Goyang Jempol'",
+          "Politik 'Open Mic 24 Jam'",
+          "Politik 'Balas Pantun'"
+        ],
+        answer: 0,
+        note: "Istilah 'Politik Silent Treatment' digunakan pengamat di media nasional (Nov 2026) untuk membaca strategi menahan komentar terbuka."
+      },
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Apabila Presiden dan Wakil Presiden berhalangan tetap secara bersamaan, siapa yang menjadi pelaksana tugas kepresidenan secara kolektif menurut Pasal 8 ayat (3) UUD 1945?",
+        options: [
+          "Menteri Luar Negeri, Menteri Dalam Negeri, dan Menteri Pertahanan secara bersama-sama",
+          "Ketua DPR, Ketua MPR, dan Ketua DPD secara bergiliran setiap minggu",
+          "Panglima TNI, Kapolri, dan Jaksa Agung",
+          "Menteri Keuangan, Gubernur BI, dan Ketua OJK"
+        ],
+        answer: 0,
+        note: "Pasal 8 ayat (3) UUD 1945 menunjuk triumvirat Menlu, Mendagri, dan Menhan sebagai pelaksana tugas kepresidenan hingga MPR memilih Presiden dan Wapres baru."
+      },
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Dalam sistem pemerintahan presidensial Indonesia berdasarkan UUD 1945, kedudukan menteri-menteri negara adalah...",
+        options: [
+          "Pembantu Presiden yang diangkat dan diberhentikan oleh Presiden",
+          "Perwakilan partai yang hanya bertanggung jawab kepada ketua umum partai",
+          "Pejabat yang dipilih langsung melalui pemilu distrik",
+          "Anggota DPR yang merangkap jabatan eksekutif"
+        ],
+        answer: 0,
+        note: "Pasal 17 UUD 1945 menegaskan bahwa Presiden dibantu oleh menteri-menteri negara yang diangkat dan diberhentikan oleh Presiden."
+      },
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Kewenangan Presiden untuk menetapkan Peraturan Pemerintah Pengganti Undang-Undang (Perppu) hanya dapat dilakukan apabila memenuhi syarat konstitusional berupa...",
+        options: [
+          "Dalam hal ihwal kegentingan yang memaksa",
+          "Apabila trending topic di media sosial bertahan lebih dari tiga hari",
+          "Saat masa reses DPR berlangsung selama dua minggu",
+          "Jika diminta oleh asosiasi pengamat politik"
+        ],
+        answer: 0,
+        note: "Pasal 22 ayat (1) UUD 1945 menyatakan bahwa dalam hal ihwal kegentingan yang memaksa, Presiden berhak menetapkan Perppu."
+      },
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Dalam kajian ilmu politik Indonesia tahun 2026, fenomena bergabungnya mayoritas partai politik ke dalam koalisi pendukung pemerintah sering disebut oleh pengamat sebagai...",
+        options: [
+          "Koalisi gemuk / politik akomodatif",
+          "Sistem dua partai murni",
+          "Oposisi absolut permanen",
+          "Pemerintahan teknokratik non-partai"
+        ],
+        answer: 0,
+        note: "Pengamat politik kerap menyoroti kecenderungan koalisi besar (akomodatif) di Indonesia yang menjaga stabilitas eksekutif namun menantang fungsi oposisi."
+      },
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Lembaga negara yang berwenang melantik Presiden dan/atau Wakil Presiden berdasarkan UUD 1945 adalah...",
+        options: [
+          "Majelis Permusyawaratan Rakyat (MPR)",
+          "Mahkamah Konstitusi (MK)",
+          "Komisi Yudisial (KY)",
+          "Dewan Pertimbangan Presiden"
+        ],
+        answer: 0,
+        note: "Pasal 3 ayat (2) UUD 1945 menetapkan bahwa MPR melantik Presiden dan/atau Wakil Presiden."
+      },
+      {
+        cat: "KONSTITUSI & EKSEKUTIF",
+        q: "Pasukan pengamanan khusus yang langsung bertugas mengawal Wakil Presiden baru setelah proses verifikasi konstitusional selesai dan resmi dilantik MPR adalah...",
+        options: [
+          "Pasukan Pengamanan Presiden (Paspampres)",
+          "Satuan Polisi Pamong Praja (Satpol PP)",
+          "Korps Musik Kepolisian",
+          "Tim Keamanan Siber Kedai Sebelah"
+        ],
+        answer: 0,
+        note: "Paspampres bertugas melaksanakan pengamanan fisik langsung jarak dekat terhadap Presiden, Wakil Presiden, dan tamu negara setingkat kepala negara."
+      },
+
+      // --- KATEGORI 6: DIPLOMASI & POLITIK LUAR NEGERI RI 2026 (052 - 061) ---
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Pada November 2026, Presiden Prabowo Subianto menghadiri Konferensi Tingkat Tinggi (KTT) ke-33 Kerja Sama Ekonomi Asia Pasifik (APEC) 2026 yang diselenggarakan di kota...",
+        options: [
+          "Shenzhen, Tiongkok",
+          "Jenewa, Swiss",
+          "Brasilia, Brasil",
+          "Nairobi, Kenya"
+        ],
+        answer: 0,
+        note: "KTT APEC ke-33 tahun 2026 digelar di Shenzhen, Tiongkok pada November 2026, di mana Indonesia juga menyepakati kerja sama investasi bilateral."
+      },
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Pada September 2026, Presiden Prabowo menghadiri KTT BRICS di New Delhi, India. Menurut Dewan Pakar BPIP, pidato Presiden Prabowo dalam forum tersebut menghidupkan kembali semangat bersejarah Indonesia tahun 1955 yang dikenal sebagai...",
+        options: [
+          "Bandung Spirit (Semangat Konferensi Asia Afrika 1955)",
+          "Deklarasi Djuanda 1957",
+          "Perjanjian Linggarjati",
+          "Traktat Versailles"
+        ],
+        answer: 0,
+        note: "Pernyataan Presiden Prabowo di KTT BRICS New Delhi (12–13 September 2026) dinilai merevitalisasi Bandung Spirit dalam solidaritas negara-negara Global South."
+      },
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Dalam rangkaian lawatan diplomatik Asia Tenggara pada November 2026 di Manila, Filipina, Presiden Prabowo menghadiri KTT Khusus ASEAN-AS dan KTT Asia Timur dengan menegaskan komitmen konsisten Indonesia terhadap...",
+        options: [
+          "Perjuangan kemerdekaan rakyat Palestina dan perdamaian Indo-Pasifik",
+          "Pembentukan mata uang tunggal khusus negara kepulauan",
+          "Penutupan seluruh jalur pelayaran internasional di Selat Malaka",
+          "Penghentian kerja sama perdagangan dengan negara berkembang"
+        ],
+        answer: 0,
+        note: "Di KTT Asia Timur November 2026 di Manila, Indonesia kembali menegaskan dukungan penuh terhadap kemerdekaan Palestina dan dialog damai Indo-Pasifik."
+      },
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Di bidang perdagangan internasional tahun 2026, Indonesia dan Uni Eropa resmi menandatangani perjanjian kemitraan ekonomi komprehensif yang disingkat...",
+        options: [
+          "IEU-CEPA (Indonesia–European Union Comprehensive Economic Partnership Agreement)",
+          "NAFTA-RI",
+          "OPEC-EURO",
+          "ASEAN-SCHENGEN"
+        ],
+        answer: 0,
+        note: "Penandatanganan IEU-CEPA dan Investment Protection Agreement (IPA) pada 2026 memperkuat akses pasar perdagangan dan investasi antara Indonesia dan Uni Eropa."
+      },
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Pada November 2026, negara-negara anggota ASEAN mengadopsi Deklarasi Mineral Kritis di mana Indonesia berperan aktif mendorong...",
+        options: [
+          "Penguatan rantai pasok kawasan dan hilirisasi mineral kritis bernilai tambah",
+          "Ekspor seluruh bahan mentah tanpa pengolahan di dalam negeri",
+          "Penghentian total industri baterai kendaraan listrik",
+          "Monopoli perdagangan rempah oleh satu perusahaan"
+        ],
+        answer: 0,
+        note: "Indonesia mendorong penguatan rantai pasok mineral kritis di ASEAN sejalan dengan agenda hilirisasi industri nasional."
+      },
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Prinsip dasar politik luar negeri Republik Indonesia yang tetap menjadi landasan diplomasi di tengah rivalitas geopolitik global tahun 2026 adalah...",
+        options: [
+          "Bebas dan Aktif",
+          "Blokade dan Isolasi",
+          "Netral Pasif Tanpa Suara",
+          "Aliansi Militer Eksklusif"
+        ],
+        answer: 0,
+        note: "Politik luar negeri 'Bebas Aktif' memungkinkan Indonesia menjalin kerja sama konstruktif dengan BRICS, APEC, ASEAN, maupun negara Barat."
+      },
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Dalam menghadapi dinamika perang tarif global dan ketegangan perdagangan internasional tahun 2026, langkah diplomasi ekonomi yang ditempuh Indonesia adalah...",
+        options: [
+          "Diversifikasi mitra dagang ke kawasan Global South, Timur Tengah, Eropa, dan Asia Pasifik",
+          "Menghentikan seluruh kegiatan ekspor non-migas",
+          "Menutup seluruh pelabuhan kontainer selama enam bulan",
+          "Mengganti seluruh transaksi ekspor dengan sistem barter"
+        ],
+        answer: 0,
+        note: "Diversifikasi pasar ekspor melalui perjanjian dagang bilateral dan multilateral (seperti IEU-CEPA dan BRICS) menjadi strategi mitigasi perang tarif."
+      },
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Dalam Rapat Paripurna DPR RI awal 2026, salah satu isu hubungan internasional dan perlindungan warga negara yang masuk dalam prioritas pengawasan parlemen adalah...",
+        options: [
+          "Evakuasi dan perlindungan WNI di negara-negara yang terdampak konflik bersenjata",
+          "Pemberian paspor diplomatik bagi seluruh selebgram",
+          "Pembukaan kedutaan besar di planet Mars",
+          "Penghapusan layanan kekonsuleran bagi pekerja migran"
+        ],
+        answer: 0,
+        note: "Perlindungan dan evakuasi WNI di wilayah konflik luar negeri menjadi salah satu dari 9 isu strategis yang dikawal DPR pada 2026."
+      },
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Keterlibatan aktif Indonesia dalam kelompok ekonomi BRICS yang diperluas pada 2026 dipandang para pakar hubungan internasional sebagai upaya...",
+        options: [
+          "Memperkuat posisi tawar negara-negara berkembang (Global South) dalam tata kelola global",
+          "Keluar dari keanggotaan Perserikatan Bangsa-Bangsa (PBB)",
+          "Membubarkan sekretariat ASEAN di Jakarta",
+          "Menghapus penggunaan mata uang Rupiah di dalam negeri"
+        ],
+        answer: 0,
+        note: "Keikutsertaan Indonesia di BRICS memperluas ruang diplomasi ekonomi dan memperkuat suara Global South tanpa meninggalkan forum global lainnya."
+      },
+      {
+        cat: "DIPLOMASI & GLOBAL 2026",
+        q: "Pada forum bisnis Indonesia–Tiongkok di sela kunjungan Presiden Prabowo pada November 2026, kerja sama ekonomi yang disepakati mencakup sektor strategis seperti...",
+        options: [
+          "Energi hijau, hilirisasi industri, teknologi digital, dan infrastruktur",
+          "Impor salju buatan untuk daerah pesisir",
+          "Pengelolaan parkir pasar tradisional",
+          "Produksi film dokumenter tentang kolom komentar"
+        ],
+        answer: 0,
+        note: "Kesepakatan investasi Indonesia–Tiongkok pada November 2026 berfokus pada hilirisasi, transisi energi hijau, manufaktur, dan ekonomi digital."
+      },
+
+      // --- KATEGORI 7: IKN, TATA KELOLA DAERAH & PILKADA (062 - 071) ---
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Dalam rencana pembangunan nasional tahun 2026, Ibu Kota Nusantara (IKN) di Kalimantan Timur terus melanjutkan pembangunan ekosistem pemerintahan dengan fokus pada...",
+        options: [
+          "Penyelesaian kawasan inti pusat pemerintahan, hunian ASN, serta ekosistem legislatif dan yudikatif",
+          "Pemindahan seluruh gedung pencakar langit Jakarta menggunakan helikopter",
+          "Pengubahan kawasan IKN menjadi sirkuit balap sepeda santai",
+          "Penghentian total seluruh layanan air bersih dan listrik"
+        ],
+        answer: 0,
+        note: "Pembangunan IKN pada 2026 diarahkan pada penuntasan infrastruktur kawasan inti pemerintahan, ekosistem hunian, serta sarana lembaga legislatif dan yudikatif."
+      },
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Wacana pengembalian mekanisme Pemilihan Kepala Daerah (Pilkada) agar dipilih melalui DPRD kembali ramai diperdebatkan pengamat dan politisi pada 2026. Apa argumen utama pihak yang mengusulkan Pilkada lewat DPRD?",
+        options: [
+          "Efisiensi biaya politik yang tinggi dan pengurangan potensi konflik horizontal di daerah",
+          "Karena warga daerah sudah tidak memiliki kartu identitas",
+          "Agar masa jabatan gubernur bisa diperpanjang menjadi 20 tahun",
+          "Supaya DPRD tidak perlu lagi mengadakan rapat paripurna"
+        ],
+        answer: 0,
+        note: "Pendukung wacana Pilkada via DPRD menyoroti tingginya ongkos politik Pilkada langsung, sementara penolaknya menekankan kedaulatan suara rakyat."
+      },
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Sebaliknya, apa argumen utama masyarakat sipil dan pakar demokrasi yang menolak wacana Pilkada lewat DPRD pada 2026?",
+        options: [
+          "Berpotensi mengurangi kedaulatan rakyat dalam memilih pemimpinnya secara langsung dan rawan transaksi elite",
+          "Karena kotak suara berbahan kardus sudah terlanjur dicetak",
+          "Karena gubernur tidak memiliki kewenangan administratif sama sekali",
+          "Agar anggaran daerah bisa dihabiskan untuk pesta kembang api"
+        ],
+        answer: 0,
+        note: "Kelompok masyarakat sipil menilai Pilkada langsung adalah capaian reformasi yang menjamin akuntabilitas kepala daerah langsung kepada pemilih."
+      },
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Menurut Pasal 18 ayat (4) UUD 1945 yang sering dikutip ahli hukum tata negara dalam perdebatan mekanisme Pilkada 2026, bunyi ketentuan mengenai pemilihan kepala daerah adalah...",
+        options: [
+          "Gubernur, Bupati, dan Walikota masing-masing sebagai kepala pemerintah daerah provinsi, kabupaten, dan kota dipilih secara demokratis",
+          "Kepala daerah wajib dipilih melalui aplikasi pesan singkat",
+          "Kepala daerah ditunjuk langsung oleh ketua partai pemenang pemilu",
+          "Kepala daerah diwariskan secara turun-temurun"
+        ],
+        answer: 0,
+        note: "Frasa 'dipilih secara demokratis' dalam Pasal 18 ayat (4) UUD 1945 menjadi dasar tafsir konstitusional bahwa baik pemilihan langsung maupun melalui DPRD dimungkinkan oleh UU."
+      },
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Dalam RKP 2026, untuk mengoptimalkan kapasitas fiskal daerah tanpa membebani masyarakat kecil, pemerintah mendorong penguatan instrumen pendapatan daerah yang disebut...",
+        options: [
+          "Pajak Daerah dan Retribusi Daerah (PDRD)",
+          "Pungutan Liar Terpadu Berbasis Aplikasi",
+          "Sumbangan Wajib Pengamat Politik",
+          "Pajak Udara Bersih Pedesaan"
+        ],
+        answer: 0,
+        note: "Optimalisasi PDRD dalam RKP 2026 diarahkan untuk memperkuat kemandirian fiskal daerah secara terukur dan berdaya saing."
+      },
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Dalam penanganan bencana banjir dan longsor di wilayah Sumatera yang masuk tahap rekonstruksi dan rehabilitasi pada tahun 2026, lembaga pemerintah pusat yang mengoordinasikan penanggulangan bencana adalah...",
+        options: [
+          "Badan Nasional Penanggulangan Bencana (BNPB) bersama pemerintah daerah",
+          "Badan Pengawas Pasar Modal",
+          "Komisi Pemberantasan Korupsi",
+          "Lembaga Sensor Film"
+        ],
+        answer: 0,
+        note: "BNPB bersama kementerian terkait dan pemda melaksanakan tahapan rehabilitasi serta rekonstruksi infrastruktur dan hunian warga pascabencana."
+      },
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Lembaga negara di tingkat pusat yang memiliki fungsi khusus memperjuangkan aspirasi daerah serta memberi pertimbangan atas RUU terkait otonomi daerah dan perimbangan keuangan pusat-daerah adalah...",
+        options: [
+          "Dewan Perwakilan Daerah (DPD RI)",
+          "Komisi Yudisial (KY)",
+          "Badan Pemeriksa Keuangan (BPK)",
+          "Ombudsman Republik Indonesia"
+        ],
+        answer: 0,
+        note: "DPD RI merupakan kamar parlemen yang mewakili kepentingan daerah dalam sistem ketatanegaraan Indonesia."
+      },
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Otorita Ibu Kota Nusantara (OIKN) memiliki kedudukan khusus dalam struktur pemerintahan Indonesia yakni setingkat dengan...",
+        options: [
+          "Kementerian",
+          "Pemerintah Kelurahan",
+          "Unit Pelaksana Teknis Dinas Pasar",
+          "Rukun Warga Khusus"
+        ],
+        answer: 0,
+        note: "Berdasarkan UU IKN, Kepala Otorita IKN berkedudukan setingkat menteri yang ditunjuk dan bertanggung jawab kepada Presiden."
+      },
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Dalam isu tata kelola hutan dan agraria pada tahun 2026, evaluasi izin pemanfaatan dan alih fungsi hutan menjadi penting karena berkaitan langsung dengan...",
+        options: [
+          "Mitigasi bencana ekologis, perlindungan hak masyarakat adat, dan komitmen penurunan emisi GRK",
+          "Peningkatan produksi kertas untuk mencetak baliho pemilu",
+          "Pembangunan lapangan golf di tengah hutan lindung",
+          "Penghapusan seluruh kawasan taman nasional"
+        ],
+        answer: 0,
+        note: "Evaluasi alih fungsi hutan berkaitan erat dengan pencegahan bencana hidrometeorologi serta target penurunan emisi gas rumah kaca dalam RKP 2026."
+      },
+      {
+        cat: "IKN & OTONOMI DAERAH",
+        q: "Peraturan daerah (Perda) yang masih memuat sanksi pidana lama harus disesuaikan setelah berlakunya KUHP Nasional dan UU Penyesuaian Pidana pada tahun 2026 agar tidak bertentangan dengan...",
+        options: [
+          "Asas hierarki peraturan perundang-undangan (Lex Superior Derogat Legi Inferiori)",
+          "Asas siapa cepat dia dapat",
+          "Aturan tidak tertulis grup komunitas hobi",
+          "Keputusan rapat karang taruna"
+        ],
+        answer: 0,
+        note: "Sesuai asas hierarki peraturan perundang-undangan, ketentuan pidana dalam Perda tidak boleh bertentangan dengan undang-undang di atasnya."
+      },
+
+      // --- KATEGORI 8: REFORMASI HUKUM, KEAMANAN & TATA NEGARA 2026 (072 - 081) ---
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Pada November 2026, kajian kebijakan publik mulai menyoroti evaluasi rekrutmen penyelenggara pemilu sebagai persiapan dini menghadapi tahapan Pemilu tahun...",
+        options: [
+          "2029",
+          "2027",
+          "2035",
+          "2025"
+        ],
+        answer: 0,
+        note: "Evaluasi tata kelola dan proses seleksi penyelenggara pemilu (KPU dan Bawaslu) disiapkan lebih awal untuk menyongsong Pemilu 2029."
+      },
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Dalam diskursus ketatanegaraan Indonesia sepanjang 2026, revisi Undang-Undang TNI yang memperluas penempatan prajurit aktif pada jabatan sipil tertentu menuai sorotan akademisi terkait prinsip...",
+        options: [
+          "Supremasi sipil dan profesionalisme militer dalam negara demokrasi",
+          "Kewajiban prajurit menjadi pembawa acara kuis televisi",
+          "Penghapusan seluruh akademi militer",
+          "Penggabungan seluruh kementerian menjadi satu kantor"
+        ],
+        answer: 0,
+        note: "Akademisi tata negara menyoroti pentingnya menjaga keseimbangan antara kebutuhan penugasan negara dan prinsip supremasi sipil pasca-reformasi."
+      },
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Pada November 2026, Komisi Yudisial (KY) menegaskan pentingnya menjaga keseimbangan antara pengawasan perilaku hakim dan independensi peradilan. Apa kewenangan utama Komisi Yudisial menurut UUD 1945?",
+        options: [
+          "Mengusulkan pengangkatan hakim agung serta menjaga dan menegakkan kehormatan, keluhuran martabat, dan perilaku hakim",
+          "Membatalkan putusan kasasi Mahkamah Agung secara langsung",
+          "Menangkap tersangka kasus tindak pidana korupsi",
+          "Mengesahkan Rancangan Anggaran Pendapatan dan Belanja Negara"
+        ],
+        answer: 0,
+        note: "Pasal 24B UUD 1945 menetapkan wewenang KY dalam mengusulkan calon hakim agung dan mengawasi kode etik serta perilaku hakim."
+      },
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Apabila warga negara menilai suatu undang-undang yang disahkan pada tahun 2026 bertentangan dengan UUD 1945, jalur konstitusional yang dapat ditempuh adalah mengajukan...",
+        options: [
+          "Pengujian undang-undang (Judicial Review) ke Mahkamah Konstitusi (MK)",
+          "Petisi pembubaran DPR ke kantor kelurahan",
+          "Gugatan perdata ke pengadilan niaga",
+          "Aduan melalui kolom komentar akun resmi kementerian"
+        ],
+        answer: 0,
+        note: "Mahkamah Konstitusi berwenang mengadili pada tingkat pertama dan terakhir yang putusannya bersifat final untuk menguji undang-undang terhadap UUD 1945."
+      },
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Sementara itu, apabila suatu Peraturan Pemerintah (PP) atau Peraturan Presiden (Perpres) dinilai bertentangan dengan undang-undang di atasnya, lembaga peradilan yang berwenang mengujinya adalah...",
+        options: [
+          "Mahkamah Agung (MA)",
+          "Mahkamah Konstitusi (MK)",
+          "Komisi Pengawas Persaingan Usaha (KPPU)",
+          "Dewan Pers"
+        ],
+        answer: 0,
+        note: "Sesuai Pasal 24A UUD 1945, Mahkamah Agung berwenang menguji peraturan perundang-undangan di bawah undang-undang terhadap undang-undang."
+      },
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Dalam perspektif hukum lingkungan Indonesia pada November 2026, gugatan warga negara terhadap penyelenggara negara atas kelalaian pemenuhan hak lingkungan hidup dikenal sebagai...",
+        options: [
+          "Citizen Lawsuit (Gugatan Warga Negara)",
+          "Class Action Promo Belanja",
+          "Praperadilan Netizen",
+          "Arbitrase Komersial"
+        ],
+        answer: 0,
+        note: "Citizen Lawsuit merupakan mekanisme gugatan warga negara untuk menuntut tanggung jawab negara atas pembiaran yang merugikan kepentingan publik."
+      },
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Lembaga negara independen yang bertugas mengawasi penyelenggaraan pelayanan publik oleh instansi pemerintah dan BUMN, termasuk maladministrasi bansos maupun layanan perizinan pada 2026, adalah...",
+        options: [
+          "Ombudsman Republik Indonesia",
+          "Lembaga Ketahanan Nasional (Lemhannas)",
+          "Badan Siber dan Sandi Negara (BSSN)",
+          "Perpustakaan Nasional"
+        ],
+        answer: 0,
+        note: "Ombudsman RI berwenang menerima laporan masyarakat dan mengawasi dugaan maladministrasi dalam pelayanan publik."
+      },
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Dalam sistem checks and balances antar-lembaga penegak hukum pasca-KUHP Nasional 2026, fungsi utama Kejaksaan RI dalam sistem peradilan pidana adalah...",
+        options: [
+          "Melaksanakan kekuasaan negara di bidang penuntutan serta kewenangan lain berdasarkan undang-undang",
+          "Membuat undang-undang baru tanpa persetujuan DPR",
+          "Menentukan besaran suku bunga acuan perbankan",
+          "Mengelola dana pensiun pegawai swasta"
+        ],
+        answer: 0,
+        note: "Kejaksaan RI berperan sebagai dominus litis (pengendali perkara) dalam proses penuntutan pidana."
+      },
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Untuk menjaga transparansi dan mencegah benturan kepentingan dalam pengelolaan lembaga publik, setiap penyelenggara negara wajib melaporkan harta kekayaannya secara berkala kepada KPK melalui...",
+        options: [
+          "LHKPN (Laporan Harta Kekayaan Penyelenggara Negara)",
+          "Unggahan foto isi dompet di Instagram Story",
+          "Laporan kas mingguan arisan komplek",
+          "Sertifikat kelulusan kuis daring"
+        ],
+        answer: 0,
+        note: "LHKPN merupakan instrumen transparansi publik yang dikelola KPK untuk memantau kewajaran harta penyelenggara negara."
+      },
+      {
+        cat: "REFORMASI & TATA NEGARA",
+        q: "Dalam sengketa informasi publik apabila suatu badan publik menolak memberikan dokumen anggaran yang seharusnya terbuka bagi masyarakat, warga dapat mengajukan permohonan penyelesaian sengketa ke...",
+        options: [
+          "Komisi Informasi (KI) sesuai UU Keterbukaan Informasi Publik",
+          "Komisi Nasional Hak Asasi Hewan",
+          "Badan Meteorologi Klimatologi dan Geofisika",
+          "Kantor Urusan Agama"
+        ],
+        answer: 0,
+        note: "Berdasarkan UU No. 14 Tahun 2008 tentang KIP, Komisi Informasi berwenang menyelesaikan sengketa informasi publik melalui mediasi atau ajudikasi non-litigasi."
+      },
+
+      // --- KATEGORI 9: SOSIOLOGI NETIZEN & KAMUS POLITIK 2026 (082 - 091) ---
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Dalam kamus sosiologi digital Kedai Sebelah tahun 2026, fenomena warganet yang baru membaca judul berita 'clickbait' selama 3 detik namun langsung menulis utas analisis 25 paragraf disebut...",
+        options: [
+          "Sindrom Pakar Tata Negara Jalur FYP",
+          "Literasi Konstitusional Mendalam",
+          "Metodologi Riset Pustaka Primer",
+          "Observasi Partisipatif Empiris"
+        ],
+        answer: 0,
+        note: "Ciri khas pengamat politik dadakan di media sosial adalah kecepatan menyimpulkan isi draf undang-undang hanya bermodalkan tangkapan layar judul berita."
+      },
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Istilah 'Rapat Dengar Pendapat Netizen (RDPN)' di linimasa media sosial Indonesia tahun 2026 biasanya berlangsung di...",
+        options: [
+          "Kolom balasan unggahan resmi instansi pemerintah dan siaran langsung ruang diskusi daring",
+          "Ruang sidang paripurna lantai tiga Gedung Nusantara",
+          "Ruang tunggu loket pembayaran pajak kendaraan",
+          "Perpustakaan arsip nasional saat jam istirahat"
+        ],
+        answer: 0,
+        note: "Kolom komentar akun resmi lembaga negara kerap menjadi ruang aspirasi spontan warga sebelum respons resmi humas diterbitkan."
+      },
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Ketika sebuah kebijakan kontroversial mendadak batal atau direvisi setelah ramai diperbincangkan warganet selama 48 jam, netizen menyebut fenomena tersebut sebagai...",
+        options: [
+          "Kekuatan 'No Viral No Justice / No Viral No Revision'",
+          "Mekanisme Ratifikasi Konvensi Jenewa",
+          "Prosedur Standar Administrasi Surat Menyurat",
+          "Efek Rumah Kaca Musiman"
+        ],
+        answer: 0,
+        note: "Tekanan opini publik digital sering kali menjadi katalisator cepat bagi pembuat kebijakan untuk mengevaluasi aturan teknis di lapangan."
+      },
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Dalam budaya komentar politik Indonesia, kalimat pembuka klasik seperti 'Izin meluruskan sebagai warga sipil biasa, padahal...' biasanya menandakan bahwa pengomentar akan...",
+        options: [
+          "Menyampaikan argumen panjang penuh istilah hukum dan makroekonomi",
+          "Meminta rekomendasi tempat makan siang terdekat",
+          "Menawarkan jasa perbaikan pendingin ruangan",
+          "Mengakhiri diskusi tanpa menulis satu kata pun"
+        ],
+        answer: 0,
+        note: "Retorika merendah di awal komentar ('sebagai warga awam...') merupakan gaya khas netizen sebelum meluncurkan analisis mendalam."
+      },
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Apa senjata pamungkas netizen Indonesia ketika kalah argumen dalam debat politik di grup WhatsApp keluarga?",
+        options: [
+          "Mengirim stiker jempol raksasa atau mengalihkan topik ke info promo diskon",
+          "Melampirkan salinan lengkap lembaran negara sejak tahun 1945",
+          "Mengajukan banding ke Mahkamah Internasional di Den Haag",
+          "Mengganti nama grup menjadi 'Forum Kajian Strategis'"
+        ],
+        answer: 0,
+        note: "Stiker jempol dan pengalihan topik adalah mekanisme de-eskalasi konflik paling efektif dalam demokrasi grup keluarga."
+      },
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Istilah 'Echo Chamber' (ruang gema) dalam algoritma media sosial politik tahun 2026 berbahaya bagi pengamat dadakan karena membuat pengguna...",
+        options: [
+          "Hanya melihat opini yang sejalan dengan keyakinannya sendiri sehingga merasa seluruh rakyat berpikiran sama",
+          "Mendengar suara gema setiap kali membuka aplikasi kalkulator",
+          "Otomatis lulus ujian pegawai negeri sipil",
+          "Tidak bisa mengakses berita cuaca harian"
+        ],
+        answer: 0,
+        note: "Algoritma echo chamber memperkuat bias konfirmasi sehingga pengguna terjebak dalam gelembung opini yang homogen."
+      },
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Ketika seorang tokoh publik menyampaikan pernyataan yang memicu kehebohan lalu keesokan harinya mengeluarkan video klarifikasi berlatar polos, netizen menjuluki momen itu sebagai...",
+        options: [
+          "Siklus 'Pernyataan Spontan — Rujak Netizen — Klarifikasi Salah Paham'",
+          "Protokol Kenegaraan Tingkat Tinggi",
+          "Sidang Istimewa Akhir Tahun",
+          "Deklarasi Damai Kawasan"
+        ],
+        answer: 0,
+        note: "Pola komunikasi krisis berupa klarifikasi cepat menjadi pemandangan lazim dalam dinamika komunikasi politik era media sosial."
+      },
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Istilah 'Astroturfing' dalam analisis komunikasi politik digital 2026 merujuk pada praktik...",
+        options: [
+          "Menciptakan kesan dukungan atau penolakan akar rumput secara artifisial menggunakan akun terkoordinasi",
+          "Pemasangan rumput sintetis di halaman gedung balai kota",
+          "Siaran langsung pengamatan gerhana bulan",
+          "Kampanye penghijauan taman kota oleh pelajar"
+        ],
+        answer: 0,
+        note: "Astroturfing adalah teknik rekayasa opini publik agar tampak seolah-olah muncul secara organik dari masyarakat luas."
+      },
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Dalam etika bermedia sosial dan literasi digital tahun 2026, langkah pertama yang wajib dilakukan pengamat politik dadakan sebelum membagikan tangkapan layar kutipan pejabat adalah...",
+        options: [
+          "Memverifikasi sumber primer berita dan memeriksa apakah gambar tersebut hasil suntingan atau hoaks",
+          "Menambahkan musik latar dramatis agar cepat masuk beranda",
+          "Langsung menandai sepuluh akun gosip sekaligus",
+          "Memotong tanggal terbit berita agar terlihat seperti kejadian hari ini"
+        ],
+        answer: 0,
+        note: "Verifikasi sumber asli dan tanggal publikasi mencegah penyebaran disinformasi maupun berita lama yang didaur ulang."
+      },
+      {
+        cat: "SOSIOLOGI NETIZEN 2026",
+        q: "Menurut standar Kurikulum Kedai Sebelah, apa perbedaan mendasar antara 'Pengamat Politik Profesional' dan 'Pengamat Politik Dadakan'?",
+        options: [
+          "Pengamat profesional dibayar stasiun televisi, sedangkan pengamat dadakan mengeluarkan kuota internet pribadi demi mencerdaskan kolom komentar",
+          "Pengamat dadakan memiliki hak melantik menteri secara langsung",
+          "Pengamat profesional tidak pernah minum kopi",
+          "Pengamat dadakan wajib mengenakan jas lengkap saat mengetik komentar"
+        ],
+        answer: 0,
+        note: "Dedikasi kuota internet pribadi dan semangat berdiskusi di warung kopi adalah modal utama pengamat politik dadakan."
+      },
+
+      // --- KATEGORI 10: UJIAN AKHIR PENGAMAT DADAKAN TERPADU (092 - 101) ---
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "Mengapa pengesahan RUU Perampasan Aset oleh DPR RI pada 19 November 2026 dianggap krusial oleh para pegiat antikorupsi?",
+        options: [
+          "Memungkinkan penyitaan dan perampasan aset hasil tindak pidana secara efektif untuk memulihkan kerugian negara",
+          "Menghapus seluruh denda bagi pelaku pencucian uang",
+          "Mengalihkan seluruh aset sitaan menjadi hadiah undian berhadiah",
+          "Membatasi kewenangan penyidik dalam menelusuri aliran dana"
+        ],
+        answer: 0,
+        note: "UU Perampasan Aset memperkuat rezim pemulihan aset (asset recovery) dari hasil kejahatan ekonomi dan korupsi."
+      },
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "Dalam sistem ketatanegaraan Indonesia, apabila Presiden berhalangan tetap, Wakil Presiden menggantikan Presiden sampai habis masa jabatannya. Ketentuan ini tercantum dalam UUD 1945 Pasal...",
+        options: [
+          "Pasal 8 ayat (1)",
+          "Pasal 33 ayat (3)",
+          "Pasal 28E ayat (1)",
+          "Pasal 36A"
+        ],
+        answer: 0,
+        note: "Pasal 8 ayat (1) UUD 1945 mengatur suksesi otomatis Wakil Presiden menggantikan Presiden jika Presiden mangkat, berhenti, diberhentikan, atau tidak dapat melakukan kewajibannya."
+      },
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "Pada 2 Januari 2026, Indonesia resmi mengakhiri penggunaan KUHP lama warisan kolonial Belanda yang bernama...",
+        options: [
+          "Wetboek van Strafrecht (WvS)",
+          "Burgerlijk Wetboek (BW)",
+          "Magna Carta",
+          "Code Napoleon"
+        ],
+        answer: 0,
+        note: "Wetboek van Strafrecht (WvS) warisan Hindia Belanda resmi digantikan oleh KUHP Nasional (UU No. 1 Tahun 2023) mulai 2 Januari 2026."
+      },
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "Fasilitas insentif pajak PPh final 0% dalam PP 41/2026 yang terbit pada November 2026 diberikan untuk mendukung restrukturisasi dan penataan kepemilikan entitas di lingkungan...",
+        options: [
+          "BPI Danantara",
+          "Federasi Sepak Bola Dunia",
+          "Koperasi Simpan Pinjam Desa",
+          "Asosiasi Pedagang Kaki Lima"
+        ],
+        answer: 0,
+        note: "PP 41/2026 memfasilitasi penataan struktur entitas BUMN dalam tubuh BPI Danantara dengan PPh final 0% hingga akhir 2029."
+      },
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "Dalam pidato diplomatiknya di KTT APEC 2026 di Shenzhen pada November 2026, Presiden Prabowo Subianto menyerukan kemakmuran bersama di kawasan Asia Pasifik melalui tiga pilar utama, yaitu...",
+        options: [
+          "Keterbukaan, inovasi, dan kerja sama",
+          "Proteksionisme, isolasi, dan perang dagang",
+          "Monopoli, tarif tinggi, dan pembatasan visa",
+          "Kompetisi militer, sanksi sepihak, dan blokade"
+        ],
+        answer: 0,
+        note: "Di KTT APEC 2026 Shenzhen (19 November 2026), Presiden Prabowo menekankan keterbukaan, inovasi, dan kerja sama sebagai kunci kemakmuran kawasan."
+      },
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "Dalam kerangka makroekonomi RKP 2026, sasaran indikator pembangunan mencakup target penurunan tingkat kemiskinan nasional pada kisaran...",
+        options: [
+          "6,5% – 7,5%",
+          "25,0% – 30,0%",
+          "40,0% – 45,0%",
+          "0,00% dalam waktu satu minggu"
+        ],
+        answer: 0,
+        note: "RKP 2026 menargetkan tingkat kemiskinan berada pada rentang 6,5%–7,5% dan kemiskinan ekstrem menuju 0%–0,5%."
+      },
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "Lembaga negara yang bertugas mengaudit pengelolaan dan tanggung jawab keuangan negara serta menyerahkan hasil pemeriksaannya kepada DPR, DPD, dan DPRD adalah...",
+        options: [
+          "Badan Pemeriksa Keuangan (BPK)",
+          "Otoritas Jasa Keuangan (OJK)",
+          "Lembaga Penjamin Simpanan (LPS)",
+          "Komisi Pemilihan Umum (KPU)"
+        ],
+        answer: 0,
+        note: "Sesuai Pasal 23E UUD 1945, BPK memeriksa pengelolaan dan tanggung jawab tentang keuangan negara dan melaporkan hasilnya kepada lembaga perwakilan."
+      },
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "Dalam perdebatan tata negara sepanjang 2026 mengenai batas kewenangan Peraturan Presiden (Perpres) di bidang pengadaan barang dan jasa publik, para pakar hukum mengusulkan agar pengaturannya dinaikkan menjadi...",
+        options: [
+          "Undang-Undang Pengadaan Barang dan Jasa Publik demi kepastian hukum dan akuntabilitas",
+          "Surat Edaran Lurah Setempat",
+          "Pengumuman Pengeras Suara Kompleks",
+          "Peraturan Internal Komunitas Daring"
+        ],
+        answer: 0,
+        note: "Akademisi hukum administrasi negara mendorong pembentukan UU Pengadaan Barang dan Jasa Publik agar prinsip transparansi dan akuntabilitas memiliki landasan setingkat UU."
+      },
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "Ketika mengikuti sidang-sidang politik penting yang disiarkan langsung di kanal YouTube resmi lembaga negara pada tahun 2026, sikap warganet yang mencerminkan partisipasi demokrasi sehat adalah...",
+        options: [
+          "Menyimak substansi perdebatan secara utuh dan menyampaikan kritik berbasis data serta nalar sehat",
+          "Membanjiri kolom live chat dengan promosi tautan judi daring",
+          "Menyebarkan ancaman pribadi terhadap keluarga narasumber",
+          "Memotong video di luar konteks untuk memicu kesalahpahaman"
+        ],
+        answer: 0,
+        note: "Partisipasi digital yang substantif dan berbasis data menjadikan ruang publik demokrasi lebih sehat dan bermartabat."
+      },
+      {
+        cat: "UJIAN TERPADU 2026",
+        q: "SOAL PAMUNGKAS NO. 101: Setelah menuntaskan seluruh 101 butir soal ujian ini, apa hak konstitusional netizen yang melekat pada pemegang Sertifikat Pengamat Politik Dadakan dari Kedai Sebelah?",
+        options: [
+          "Berhak mengunduh sertifikat PDF ini sebagai bukti sah ketahanan membaca isu politik RI 2026 sambil tetap menjaga kewarasan bersama",
+          "Berhak mengetuk palu sidang paripurna menggantikan pimpinan DPR",
+          "Berhak mengubah postur APBN 2026 melalui aplikasi kalkulator ponsel",
+          "Bebas dari kewajiban membayar parkir di minimarket mana pun"
+        ],
+        answer: 0,
+        note: "Selamat! Anda telah menuntaskan seluruh 101 soal edisi politik Indonesia 2026. Saatnya mencetak sertifikat pengamat politik dadakan Anda!"
+      }
+    ];
+
+    // Verify we have exact 101 questions
+    console.assert(QUESTIONS_DATA.length === 101, `Expected 101 questions, got ${QUESTIONS_DATA.length}`);
+
+    /* ========================================================================
+       APPLICATION STATE
+       ======================================================================== */
+    const state = {
+      participant: {
+        nama: "",
+        hoby: "",
+        medsos: ""
+      },
+      currentIndex: 0,
+      userAnswers: new Array(QUESTIONS_DATA.length).fill(null),
+      elapsedSeconds: 0,
+      timerInterval: null,
+      isManualPaused: false,
+      isAnswerPaused: false,
+      isFinished: false,
+      certRegNumber: "",
+      certDateFormatted: ""
+    };
+
+    const PAUSE_QUOTES = [
+      "Silakan regangkan jempol, seduh kopi sachet, atau pantau grup WhatsApp keluarga sejenak. Soal disembunyikan agar integritas pengamat tetap terjaga.",
+      "Peringatan Kedai Sebelah: Terlalu lama membedah pasal KUHP 2026 dan postur APBN dapat memicu kerutan dahi. Tarik napas dalam-dalam sebelum lanjut.",
+      "Istirahat sejenak adalah hak asasi setiap pengamat politik dadakan. Pastikan kuota internet dan baterai ponsel aman untuk menaklukkan sisa soal.",
+      "Mode Jedah Aktif: Silakan cek notifikasi medsos Anda dulu, siapa tahu ada berita breaking news baru sebelum Anda lanjut ke soal berikutnya."
+    ];
+
+    /* ========================================================================
+       DOM ELEMENT REFERENCES
+       ======================================================================== */
+    const viewRegister = document.getElementById("view-register");
+    const viewExam = document.getElementById("view-exam");
+    const viewCertificate = document.getElementById("view-certificate");
+
+    const formIdentitas = document.getElementById("form-identitas");
+    const inputNama = document.getElementById("input-nama");
+    const inputHoby = document.getElementById("input-hoby");
+    const inputMedsos = document.getElementById("input-medsos");
+    const registerError = document.getElementById("register-error");
+    const registerErrorText = document.getElementById("register-error-text");
+
+    const hudNama = document.getElementById("hud-nama");
+    const hudMedsos = document.getElementById("hud-medsos");
+    const hudAnswered = document.getElementById("hud-answered");
+    const hudCorrect = document.getElementById("hud-correct");
+    const hudProgressBar = document.getElementById("hud-progress-bar");
+    const hudTimer = document.getElementById("hud-timer");
+    const hudTimerDot = document.getElementById("hud-timer-dot");
+    const hudTimerStatus = document.getElementById("hud-timer-status");
+
+    const questionStage = document.getElementById("question-stage");
+    const qNumberBadge = document.getElementById("q-number-badge");
+    const qCategoryBadge = document.getElementById("q-category-badge");
+    const qStatusBadge = document.getElementById("q-status-badge");
+    const qText = document.getElementById("q-text");
+    const qOptions = document.getElementById("q-options");
+    const qFeedback = document.getElementById("q-feedback");
+    const qFeedbackHeader = document.getElementById("q-feedback-header");
+    const qFeedbackVerdict = document.getElementById("q-feedback-verdict");
+    const qFeedbackNote = document.getElementById("q-feedback-note");
+
+    const btnPrev = document.getElementById("btn-prev");
+    const btnNext = document.getElementById("btn-next");
+    const btnNextUnanswered = document.getElementById("btn-next-unanswered");
+    const btnFinishExam = document.getElementById("btn-finish-exam");
+    const questionMatrix = document.getElementById("question-matrix");
+    const sidebarRemaining = document.getElementById("sidebar-remaining");
+
+    const modalPause = document.getElementById("modal-pause");
+    const btnPause = document.getElementById("btn-pause");
+    const btnResume = document.getElementById("btn-resume");
+    const pauseTimeDisplay = document.getElementById("pause-time-display");
+    const pauseQuote = document.getElementById("pause-quote");
+
+    const modalConfirm = document.getElementById("modal-confirm");
+    const confirmTag = document.getElementById("confirm-tag");
+    const confirmTitle = document.getElementById("confirm-title");
+    const confirmBody = document.getElementById("confirm-body");
+    const btnConfirmCancel = document.getElementById("btn-confirm-cancel");
+    const btnConfirmOk = document.getElementById("btn-confirm-ok");
+
+    const btnThemeToggle = document.getElementById("btn-theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+    const themeLabel = document.getElementById("theme-label");
+
+    /* ========================================================================
+       THEME SWITCHER (LIGHT MODE / DARK MODE)
+       ======================================================================== */
+    function applyTheme(theme) {
+      const isDark = theme === "dark";
+      if (isDark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeIcon.textContent = "☀";
+        themeLabel.textContent = "LIGHT MODE";
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        themeIcon.textContent = "☾";
+        themeLabel.textContent = "DARK MODE";
+      }
+      btnThemeToggle.setAttribute("aria-pressed", String(isDark));
+    }
+
+    function initTheme() {
+      let savedTheme = "light";
+      try {
+        const stored = localStorage.getItem("kdsb_theme");
+        if (stored === "dark" || stored === "light") {
+          savedTheme = stored;
+        }
+      } catch (e) {
+        // Fallback to light mode if storage is restricted
+      }
+      applyTheme(savedTheme);
+    }
+
+    btnThemeToggle.addEventListener("click", () => {
+      const currentIsDark = document.documentElement.getAttribute("data-theme") === "dark";
+      const nextTheme = currentIsDark ? "light" : "dark";
+      applyTheme(nextTheme);
+      try {
+        localStorage.setItem("kdsb_theme", nextTheme);
+      } catch (e) {
+        // Ignore storage error
+      }
+    });
+
+    initTheme();
+
+    /* ========================================================================
+       UTILITY FUNCTIONS
+       ======================================================================== */
+    function formatSeconds(totalSec) {
+      const hrs = Math.floor(totalSec / 3600);
+      const mins = Math.floor((totalSec % 3600) / 60);
+      const secs = totalSec % 60;
+      return [hrs, mins, secs].map(v => String(v).padStart(2, "0")).join(":");
+    }
+
+    function padNum(n, width = 3) {
+      return String(n).padStart(width, "0");
+    }
+
+    function getStats() {
+      let answered = 0;
+      let correct = 0;
+      state.userAnswers.forEach((ans, idx) => {
+        if (ans !== null) {
+          answered++;
+          if (ans === QUESTIONS_DATA[idx].answer) {
+            correct++;
+          }
+        }
+      });
+      return {
+        total: QUESTIONS_DATA.length,
+        answered,
+        correct,
+        remaining: QUESTIONS_DATA.length - answered
+      };
+    }
+
+    function getCertificateTier(correctCount) {
+      if (correctCount >= 86) {
+        return {
+          level: "SANGAT AHLI",
+          title: "Mahaguru Analisis Politik Jalur FYP & Warung Kopi Tingkat Nasional",
+          citation: "Menunjukkan penguasaan luar biasa atas dinamika konstitusi, legislasi, ekonomi politik, dan diplomasi RI 2026. Layak menjadi rujukan utama di setiap diskusi grup keluarga."
+        };
+      } else if (correctCount >= 70) {
+        return {
+          level: "AHLI",
+          title: "Pengamat Politik Senior Divisi Komentar Teratas & Utas Panjang",
+          citation: "Memiliki ketajaman analisis tinggi terhadap kebijakan publik dan peristiwa politik nasional 2026. Berwenang memberikan pencerahan berbasis data di linimasa."
+        };
+      } else if (correctCount >= 50) {
+        return {
+          level: "SEDANG",
+          title: "Analis Politik Musiman Spesialis Berita Viral & Judul Utama",
+          citation: "Cukup mengikuti perkembangan isu politik 2026 di sela kesibukan harian. Disarankan menambah porsi membaca naskah utuh sebelum mengetik opini panjang."
+        };
+      } else if (correctCount >= 30) {
+        return {
+          level: "KURANG",
+          title: "Pengamat Politik Pemula Jalur Ikut-Ikutan Trending Topic",
+          citation: "Baru menyentuh permukaan konstelasi politik 2026. Sangat dianjurkan lebih sering mampir ke Kedai Sebelah sambil menyimak berita terverifikasi."
+        };
+      } else {
+        return {
+          level: "SANGAT KURANG",
+          title: "Warga Sipil Budiman yang Lebih Fokus Promo Ongkir daripada Paripurna",
+          citation: "Ketahanan mental menyelesaikan 101 soal tetap patut diapresiasi tinggi, meski sebagian besar jawaban tampaknya dipilih berdasarkan insting dan keberuntungan."
+        };
+      }
+    }
+
+    function showCustomConfirm({ tag, title, body, okLabel, onConfirm }) {
+      confirmTag.textContent = tag || "KONFIRMASI SISTEM";
+      confirmTitle.textContent = title;
+      confirmBody.textContent = body;
+      btnConfirmOk.textContent = okLabel || "YA, LANJUTKAN";
+      modalConfirm.classList.remove("hidden");
+
+      const cleanup = () => {
+        modalConfirm.classList.add("hidden");
+        btnConfirmOk.onclick = null;
+        btnConfirmCancel.onclick = null;
+      };
+
+      btnConfirmCancel.onclick = cleanup;
+      btnConfirmOk.onclick = () => {
+        cleanup();
+        onConfirm();
+      };
+    }
+
+    /* ========================================================================
+       TIMER & PAUSE SYSTEM (AUTO-PAUSE ON ANSWER + MANUAL BREAK PAUSE)
+       ======================================================================== */
+    function updateTimerHudStatus() {
+      if (state.isManualPaused) {
+        hudTimerStatus.textContent = "TIMER ISTIRAHAT (JEDA)";
+        hudTimerDot.classList.remove("signal-dot");
+      } else if (state.isAnswerPaused) {
+        hudTimerStatus.textContent = "JEDA (JAWABAN TERKUNCI)";
+        hudTimerDot.classList.remove("signal-dot");
+      } else {
+        hudTimerStatus.textContent = "TIMER UJIAN AKTIF";
+        hudTimerDot.classList.add("signal-dot");
+      }
+    }
+
+    function startTimer() {
+      stopTimer();
+      state.isManualPaused = false;
+      updateTimerHudStatus();
+      state.timerInterval = setInterval(() => {
+        if (!state.isManualPaused && !state.isAnswerPaused && !state.isFinished) {
+          state.elapsedSeconds++;
+          hudTimer.textContent = formatSeconds(state.elapsedSeconds);
+        }
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (state.timerInterval) {
+        clearInterval(state.timerInterval);
+        state.timerInterval = null;
+      }
+    }
+
+    function pauseExam() {
+      if (state.isFinished) return;
+      state.isManualPaused = true;
+      updateTimerHudStatus();
+      pauseTimeDisplay.textContent = formatSeconds(state.elapsedSeconds);
+      pauseQuote.textContent = PAUSE_QUOTES[Math.floor(Math.random() * PAUSE_QUOTES.length)];
+      modalPause.classList.remove("hidden");
+    }
+
+    function resumeExam() {
+      state.isManualPaused = false;
+      updateTimerHudStatus();
+      modalPause.classList.add("hidden");
+    }
+
+    btnPause.addEventListener("click", pauseExam);
+    btnResume.addEventListener("click", resumeExam);
+
+    /* ========================================================================
+       STEP 1: IDENTITY REGISTRATION HANDLER
+       ======================================================================== */
+    formIdentitas.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nama = inputNama.value.trim();
+      const hoby = inputHoby.value.trim();
+      const medsos = inputMedsos.value.trim();
+
+      if (!nama || !hoby || !medsos) {
+        registerErrorText.textContent = "Harap isi Nama Akrab, Hoby, dan Alamat Medsos secara lengkap karena ketiganya akan dicetak langsung pada sertifikat Anda.";
+        registerError.classList.remove("hidden");
+        if (!nama) inputNama.focus();
+        else if (!hoby) inputHoby.focus();
+        else inputMedsos.focus();
+        return;
+      }
+
+      registerError.classList.add("hidden");
+      state.participant = { nama, hoby, medsos };
+
+      // Populate Exam HUD
+      hudNama.textContent = nama;
+      hudMedsos.textContent = medsos;
+
+      // Transition to Exam View
+      viewRegister.classList.add("hidden");
+      viewExam.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      buildQuestionMatrix();
+      renderQuestion(0, "next");
+      startTimer();
+    });
+
+    /* ========================================================================
+       STEP 2: EXAM RENDERING, NAVIGATION & ANSWER LOCKING
+       ======================================================================== */
+    function buildQuestionMatrix() {
+      questionMatrix.innerHTML = "";
+      QUESTIONS_DATA.forEach((_, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.id = `matrix-btn-${idx}`;
+        btn.textContent = padNum(idx + 1, 3);
+        btn.className = "border-[1.5px] border-[#111111] font-mono-tech text-[11px] font-bold py-1.5 text-center transition-colors cursor-pointer bg-white text-[#111111] hover:bg-[#111111] hover:text-white";
+        btn.addEventListener("click", () => {
+          const dir = idx >= state.currentIndex ? "next" : "prev";
+          renderQuestion(idx, dir);
+        });
+        questionMatrix.appendChild(btn);
+      });
+      updateTelemetry();
+    }
+
+    function updateTelemetry() {
+      const stats = getStats();
+      hudAnswered.textContent = stats.answered;
+      hudCorrect.textContent = stats.correct;
+      sidebarRemaining.textContent = `${stats.remaining} SOAL`;
+
+      const pct = (stats.answered / stats.total) * 100;
+      hudProgressBar.style.width = `${pct}%`;
+
+      // Update Matrix cell states
+      QUESTIONS_DATA.forEach((item, idx) => {
+        const cell = document.getElementById(`matrix-btn-${idx}`);
+        if (!cell) return;
+        const userAns = state.userAnswers[idx];
+        const isCurrent = idx === state.currentIndex;
+
+        let base = "border-[1.5px] font-mono-tech text-[11px] font-bold py-1.5 text-center cursor-pointer ";
+        if (userAns === null) {
+          base += "bg-white text-[#111111] border-[#111111] ";
+        } else if (userAns === item.answer) {
+          base += "bg-[#111111] text-white border-[#111111] ";
+        } else {
+          base += "bg-[#FF0000] text-white border-[#111111] ";
+        }
+
+        if (isCurrent) {
+          base += "outline outline-2 outline-[#FF0000] outline-offset-1 ";
+        }
+        cell.className = base;
+      });
+    }
+
+    function renderQuestion(index, direction = "next") {
+      state.currentIndex = index;
+      const item = QUESTIONS_DATA[index];
+      const userAns = state.userAnswers[index];
+      const isAnswered = userAns !== null;
+
+      // Pause timer while viewing an answered question; resume automatically on unanswered questions
+      state.isAnswerPaused = isAnswered;
+      updateTimerHudStatus();
+
+      // Trigger directional kinetic slide animation
+      questionStage.classList.remove("anim-slide-next", "anim-slide-prev");
+      void questionStage.offsetWidth; // Force reflow
+      questionStage.classList.add(direction === "prev" ? "anim-slide-prev" : "anim-slide-next");
+
+      // Header badges
+      qNumberBadge.textContent = `SOAL ${padNum(index + 1, 3)} / 101`;
+      qCategoryBadge.textContent = item.cat;
+      qText.textContent = item.q;
+
+      if (!isAnswered) {
+        qStatusBadge.textContent = "BELUM DIJAWAB";
+        qStatusBadge.className = "font-mono-tech text-[11px] uppercase px-2.5 py-0.5 border-brutal bg-white text-[#111111]";
+      } else if (userAns === item.answer) {
+        qStatusBadge.textContent = "✓ JAWABAN TEPAT";
+        qStatusBadge.className = "font-mono-tech text-[11px] uppercase px-2.5 py-0.5 border-brutal bg-[#111111] text-white font-bold";
+      } else {
+        qStatusBadge.textContent = "✕ ANALISIS MELESET";
+        qStatusBadge.className = "font-mono-tech text-[11px] uppercase px-2.5 py-0.5 border-[1.5px] border-[#FF0000] bg-[#FF0000] text-white font-bold";
+      }
+
+      // Render Options A, B, C, D
+      const letters = ["A", "B", "C", "D"];
+      qOptions.innerHTML = "";
+
+      item.options.forEach((optText, optIdx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.disabled = isAnswered;
+
+        let wrapperClass = "w-full text-left border-[1.5px] p-3.5 sm:p-4 flex items-start gap-3.5 transition-all ";
+        let badgeClass = "font-mono-tech text-xs font-bold px-2.5 py-1 border-[1.5px] shrink-0 ";
+        let tagHtml = "";
+
+        if (!isAnswered) {
+          wrapperClass += "border-[#111111] bg-white text-[#111111] btn-brutal hover:bg-[#111111] hover:text-white group";
+          badgeClass += "border-[#111111] bg-white text-[#111111] group-hover:bg-[#FF0000] group-hover:text-white group-hover:border-[#FF0000]";
+        } else {
+          // Locked state styling
+          if (optIdx === item.answer) {
+            wrapperClass += "border-[#111111] bg-[#111111] text-white shadow-brutal-sm";
+            badgeClass += "border-white bg-white text-[#111111]";
+            tagHtml = `<span class="ml-auto font-mono-tech text-[10px] font-bold uppercase bg-white text-[#111111] px-2 py-0.5 shrink-0">KUNCI BENAR</span>`;
+          } else if (optIdx === userAns && userAns !== item.answer) {
+            wrapperClass += "border-[#FF0000] bg-[#FF0000]/10 text-[#111111]";
+            badgeClass += "border-[#FF0000] bg-[#FF0000] text-white";
+            tagHtml = `<span class="ml-auto font-mono-tech text-[10px] font-bold uppercase bg-[#FF0000] text-white px-2 py-0.5 shrink-0">PILIHAN ANDA</span>`;
+          } else {
+            wrapperClass += "border-[#111111]/35 bg-white text-[#111111]/55";
+            badgeClass += "border-[#111111]/35 bg-white text-[#111111]/55";
+          }
+        }
+
+        btn.className = wrapperClass;
+        btn.innerHTML = `
+          <span class="${badgeClass}">${letters[optIdx]}</span>
+          <span class="text-sm sm:text-base font-medium leading-snug pt-0.5">${optText}</span>
+          ${tagHtml}
+        `;
+
+        if (!isAnswered) {
+          btn.addEventListener("click", () => selectOption(optIdx));
+        }
+
+        qOptions.appendChild(btn);
+      });
+
+      // Editorial Explanation Box
+      if (isAnswered) {
+        qFeedback.classList.remove("hidden");
+        const isRight = userAns === item.answer;
+        qFeedbackHeader.className = isRight
+          ? "px-4 py-2 font-mono-tech text-xs font-bold uppercase flex items-center justify-between border-brutal-b bg-[#111111] text-white"
+          : "px-4 py-2 font-mono-tech text-xs font-bold uppercase flex items-center justify-between border-brutal-b bg-[#FF0000] text-white";
+        qFeedbackVerdict.textContent = isRight
+          ? "ANALISIS AKURAT // +1 POIN KOMPETENSI"
+          : "ANALISIS MELESET // +0 POIN";
+        qFeedbackNote.textContent = item.note;
+      } else {
+        qFeedback.classList.add("hidden");
+      }
+
+      // Navigation Button States
+      btnPrev.disabled = index === 0;
+      if (index === QUESTIONS_DATA.length - 1) {
+        btnNext.textContent = "SELESAI & TERBITKAN SERTIFIKAT ✓";
+        btnNext.className = "btn-brutal bg-[#FF0000] text-white font-mono-tech text-xs font-bold uppercase px-5 py-3";
+      } else {
+        btnNext.textContent = "SELANJUTNYA →";
+        btnNext.className = "btn-brutal bg-[#111111] text-white font-mono-tech text-xs font-bold uppercase px-5 py-3";
+      }
+
+      updateTelemetry();
+    }
+
+    function selectOption(optionIndex) {
+      if (state.userAnswers[state.currentIndex] !== null) return;
+      state.userAnswers[state.currentIndex] = optionIndex;
+      state.isAnswerPaused = true;
+      updateTimerHudStatus();
+      renderQuestion(state.currentIndex, "next");
+    }
+
+    btnPrev.addEventListener("click", () => {
+      if (state.currentIndex > 0) {
+        renderQuestion(state.currentIndex - 1, "prev");
+      }
+    });
+
+    btnNext.addEventListener("click", () => {
+      if (state.currentIndex < QUESTIONS_DATA.length - 1) {
+        renderQuestion(state.currentIndex + 1, "next");
+      } else {
+        attemptFinishExam();
+      }
+    });
+
+    btnNextUnanswered.addEventListener("click", () => {
+      const total = QUESTIONS_DATA.length;
+      for (let offset = 1; offset <= total; offset++) {
+        const candidate = (state.currentIndex + offset) % total;
+        if (state.userAnswers[candidate] === null) {
+          const dir = candidate >= state.currentIndex ? "next" : "prev";
+          renderQuestion(candidate, dir);
+          return;
+        }
+      }
+      // All 101 answered
+      attemptFinishExam();
+    });
+
+    btnFinishExam.addEventListener("click", attemptFinishExam);
+
+    // Keyboard shortcuts (A/B/C/D & Left/Right Arrows)
+    document.addEventListener("keydown", (e) => {
+      if (viewExam.classList.contains("hidden") || state.isManualPaused || !modalConfirm.classList.contains("hidden")) {
+        return;
+      }
+      const key = e.key.toUpperCase();
+      if (["A", "B", "C", "D"].includes(key)) {
+        const map = { A: 0, B: 1, C: 2, D: 3 };
+        selectOption(map[key]);
+      } else if (e.key === "ArrowRight") {
+        if (state.currentIndex < QUESTIONS_DATA.length - 1) {
+          renderQuestion(state.currentIndex + 1, "next");
+        }
+      } else if (e.key === "ArrowLeft") {
+        if (state.currentIndex > 0) {
+          renderQuestion(state.currentIndex - 1, "prev");
+        }
+      }
+    });
+
+    /* ========================================================================
+       STEP 3: FINALIZE EXAM & RENDER CERTIFICATE
+       ======================================================================== */
+    function attemptFinishExam() {
+      const stats = getStats();
+      if (stats.remaining > 0) {
+        showCustomConfirm({
+          tag: "PERINGATAN KELENGKAPAN SOAL",
+          title: `MASIH ADA ${stats.remaining} SOAL BELUM DIJAWAB`,
+          body: `Anda baru menjawab ${stats.answered} dari 101 soal. Jika sertifikat diterbitkan sekarang, ${stats.remaining} soal kosong akan otomatis dihitung salah (0 poin). Lanjutkan menerbitkan sertifikat?`,
+          okLabel: "YA, TERBITKAN SERTIFIKAT",
+          onConfirm: completeAndShowCertificate
+        });
+      } else {
+        completeAndShowCertificate();
+      }
+    }
+
+    function completeAndShowCertificate() {
+      state.isFinished = true;
+      stopTimer();
+
+      const stats = getStats();
+      const tier = getCertificateTier(stats.correct);
+      const scoreOutOf100 = ((stats.correct / stats.total) * 100).toFixed(1);
+
+      // Generate unique Certificate Registration Code & Indonesian Date
+      const now = new Date();
+      const months = ["JAN", "FEB", "MAR", "APR", "MEI", "JUN", "JUL", "AGU", "SEP", "OKT", "NOV", "DES"];
+      const dateStr = `${String(now.getDate()).padStart(2, "0")} ${months[now.getMonth()]} ${now.getFullYear()}`;
+      const randCode = Math.floor(1000 + Math.random() * 9000);
+      state.certRegNumber = `KDSB-2026-${String(now.getMonth() + 1).padStart(2, "0")}${String(now.getDate()).padStart(2, "0")}-${randCode}`;
+      state.certDateFormatted = dateStr;
+
+      // Populate Certificate Fields
+      document.getElementById("cert-reg-number").textContent = state.certRegNumber;
+      document.getElementById("cert-nama").textContent = state.participant.nama;
+      document.getElementById("cert-hoby").textContent = state.participant.hoby;
+      document.getElementById("cert-medsos").textContent = state.participant.medsos;
+
+      document.getElementById("cert-level").textContent = tier.level;
+      document.getElementById("cert-title-desc").textContent = tier.title;
+      document.getElementById("cert-citation").textContent = tier.citation;
+
+      document.getElementById("cert-score-raw").textContent = `${stats.correct} / 101 SOAL`;
+      document.getElementById("cert-score-pct").textContent = `${scoreOutOf100} / 100`;
+      document.getElementById("cert-duration").textContent = formatSeconds(state.elapsedSeconds);
+      document.getElementById("cert-date").textContent = dateStr;
+
+      // Build Category Breakdown & Full Review Archive
+      renderCategoryBreakdown();
+      renderReviewArchive("all");
+
+      // Switch View
+      viewExam.classList.add("hidden");
+      viewCertificate.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderCategoryBreakdown() {
+      const container = document.getElementById("category-breakdown");
+      const map = {};
+      QUESTIONS_DATA.forEach((item, idx) => {
+        if (!map[item.cat]) map[item.cat] = { total: 0, correct: 0 };
+        map[item.cat].total++;
+        if (state.userAnswers[idx] === item.answer) {
+          map[item.cat].correct++;
+        }
+      });
+
+      container.innerHTML = "";
+      Object.entries(map).forEach(([catName, data]) => {
+        const pct = Math.round((data.correct / data.total) * 100);
+        const row = document.createElement("div");
+        row.innerHTML = `
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-bold">${catName}</span>
+            <span>${data.correct}/${data.total} (${pct}%)</span>
+          </div>
+          <div class="w-full h-2.5 border border-[#111111] bg-white">
+            <div class="h-full ${pct >= 70 ? "bg-[#111111]" : "bg-[#FF0000]"}" style="width: ${pct}%;"></div>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function renderReviewArchive(filterType = "all") {
+      const container = document.getElementById("review-list");
+      const letters = ["A", "B", "C", "D"];
+      container.innerHTML = "";
+
+      QUESTIONS_DATA.forEach((item, idx) => {
+        const userAns = state.userAnswers[idx];
+        const isCorrect = userAns === item.answer;
+        if (filterType === "wrong" && isCorrect) return;
+
+        const card = document.createElement("div");
+        card.className = "border-brutal p-3.5 bg-white text-xs space-y-1.5";
+        const statusBadge = isCorrect
+          ? `<span class="bg-[#111111] text-white font-mono-tech text-[10px] font-bold px-2 py-0.5">BENAR</span>`
+          : `<span class="bg-[#FF0000] text-white font-mono-tech text-[10px] font-bold px-2 py-0.5">${userAns === null ? "KOSONG" : "KELIRU"}</span>`;
+
+        const userChoiceLabel = userAns === null
+          ? "Tidak dijawab"
+          : `${letters[userAns]}. ${item.options[userAns]}`;
+
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-2 font-mono-tech">
+            <span class="font-bold">SOAL #${padNum(idx + 1, 3)} // ${item.cat}</span>
+            ${statusBadge}
+          </div>
+          <p class="font-semibold text-sm text-[#111111]">${item.q}</p>
+          <div class="font-mono-tech text-[11px] pt-1 space-y-0.5">
+            <div><span class="text-[#111111]/65">JAWABAN ANDA:</span> <strong>${userChoiceLabel}</strong></div>
+            <div><span class="text-[#FF0000] font-bold">KUNCI JAWABAN:</span> <strong>${letters[item.answer]}. ${item.options[item.answer]}</strong></div>
+          </div>
+          <p class="text-[#111111]/80 pt-1 border-t border-[#111111]/15">${item.note}</p>
+        `;
+        container.appendChild(card);
+      });
+
+      if (!container.children.length) {
+        container.innerHTML = `<div class="border-brutal p-4 font-mono-tech text-xs text-center">LUAR BIASA! TIDAK ADA JAWABAN KELIRU DARI 101 SOAL.</div>`;
+      }
+    }
+
+    document.querySelectorAll(".review-filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".review-filter-btn").forEach(b => {
+          b.className = "review-filter-btn btn-brutal px-2.5 py-1 bg-white text-[#111111]";
+        });
+        btn.className = "review-filter-btn btn-brutal px-2.5 py-1 bg-[#111111] text-white font-bold";
+        renderReviewArchive(btn.dataset.filter);
+      });
+    });
+
+    /* ========================================================================
+       PDF DOWNLOAD GENERATOR (A4 LANDSCAPE HIGH-DPI EXPORT)
+       ======================================================================== */
+    const btnDownloadPdf = document.getElementById("btn-download-pdf");
+    const btnPrintCert = document.getElementById("btn-print-cert");
+    const btnRetake = document.getElementById("btn-retake");
+    const pdfStatusBanner = document.getElementById("pdf-status-banner");
+    const pdfStatusText = document.getElementById("pdf-status-text");
+
+    btnDownloadPdf.addEventListener("click", async () => {
+      const certEl = document.getElementById("certificate-document");
+      if (!certEl) return;
+
+      pdfStatusBanner.classList.remove("hidden");
+      pdfStatusText.textContent = "MENGONVERSI SERTIFIKAT KE DOKUMEN PDF A4 LANDSCAPE...";
+      btnDownloadPdf.disabled = true;
+
+      try {
+        if (typeof window.html2canvas === "undefined" || typeof window.jspdf === "undefined") {
+          throw new Error("Library PDF tidak tersedia, beralih ke dialog cetak browser.");
+        }
+
+        // Create an off-screen fixed-width clone so mobile viewports still produce full A4 Landscape PDF
+        const clone = certEl.cloneNode(true);
+        clone.style.width = "1120px";
+        clone.style.maxWidth = "1120px";
+        clone.style.minWidth = "1120px";
+        clone.style.position = "fixed";
+        clone.style.left = "-9999px";
+        clone.style.top = "0";
+        clone.style.zIndex = "-1";
+        document.body.appendChild(clone);
+
+        const canvas = await window.html2canvas(clone, {
+          scale: 2,
+          backgroundColor: "#FFFFFF",
+          useCORS: true,
+          logging: false
+        });
+
+        document.body.removeChild(clone);
+
+        const imgData = canvas.toDataURL("image/png");
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          orientation: "landscape",
+          unit: "mm",
+          format: "a4"
+        });
+
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+        const margin = 8;
+        const maxW = pageWidth - margin * 2;
+        const maxH = pageHeight - margin * 2;
+
+        const imgRatio = canvas.width / canvas.height;
+        let renderW = maxW;
+        let renderH = renderW / imgRatio;
+        if (renderH > maxH) {
+          renderH = maxH;
+          renderW = renderH * imgRatio;
+        }
+
+        const offsetX = (pageWidth - renderW) / 2;
+        const offsetY = (pageHeight - renderH) / 2;
+
+        pdf.addImage(imgData, "PNG", offsetX, offsetY, renderW, renderH);
+
+        const safeName = state.participant.nama
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "") || "peserta";
+        pdf.save(`Sertifikat-Pengamat-Politik-2026-${safeName}.pdf`);
+
+        pdfStatusText.textContent = "✓ FILE PDF BERHASIL DIUNDUH KE PERANGKAT ANDA!";
+        setTimeout(() => {
+          pdfStatusBanner.classList.add("hidden");
+        }, 4000);
+      } catch (err) {
+        pdfStatusText.textContent = "MEMBUKA DIALOG SIMPAN PDF BROWSER...";
+        setTimeout(() => {
+          pdfStatusBanner.classList.add("hidden");
+          window.print();
+        }, 600);
+      } finally {
+        btnDownloadPdf.disabled = false;
+      }
+    });
+
+    btnPrintCert.addEventListener("click", () => {
+      window.print();
+    });
+
+    btnRetake.addEventListener("click", () => {
+      showCustomConfirm({
+        tag: "RESET SESI UJIAN",
+        title: "ULANGI UJIAN DARI AWAL?",
+        body: "Seluruh jawaban dan catatan waktu saat ini akan dihapus dan Anda akan kembali ke formulir identitas peserta.",
+        okLabel: "YA, ULANGI UJIAN",
+        onConfirm: () => {
+          stopTimer();
+          state.currentIndex = 0;
+          state.userAnswers = new Array(QUESTIONS_DATA.length).fill(null);
+          state.elapsedSeconds = 0;
+          state.isManualPaused = false;
+          state.isAnswerPaused = false;
+          state.isFinished = false;
+          hudTimer.textContent = "00:00:00";
+          updateTimerHudStatus();
+
+          viewCertificate.classList.add("hidden");
+          viewExam.classList.add("hidden");
+          viewRegister.classList.remove("hidden");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
